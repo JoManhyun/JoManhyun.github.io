@@ -5,18 +5,32 @@
 	</head>
 	<body>
 		<table width = "100%" border="1">
-            <th width = "100%" height = "100">
-                <span style = "FONT-SIZE:20pt">전자문서검증시스템</span>
-            </th>
             <tr>
-                <td align = "center">
+                <th width = "100%" height = "100" colspan = "2">
+                    <span style = "FONT-SIZE:20pt">전자문서검증시스템</span>
+                </th>
+            </tr>
+            <tr>
+                <td align = "center" colspan = "2">
                     <input  type = "file">
                 </td>
             </tr>
             <tr>
-                <td align = "center">
-                    <button type="submit">등록</button>
-                    <button onclick="location.href='index.html'">button</button>
+                <th>Hash 값 : </th>
+                <td>해쉬나오는 부분</td>
+            </tr>
+            <tr>
+                <th>컨트랙트 주소 : </th>
+                <td>컨트랙트 주소 나오는 부분</td>
+            </tr>
+            <tr>
+                <th>계정주소 : </th>
+                <td>계정주소 나오는 부분</td>
+            </tr>
+            <tr>
+                <td align = "center" colspan = "2">
+<button onclick="window.open('upload_complete.html','네이버','width=430,height=500,location=no,status=no,scrollbars=yes');">등록</button>
+                    <button onclick="location.href='index.html'">뒤로</button>
                 </td>
             </tr>
         </table>
