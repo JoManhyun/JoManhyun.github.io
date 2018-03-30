@@ -1,39 +1,77 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
 		<title>전자문서검증시스템</title>
 	</head>
 	<body>
 		<table width = "100%" border="1">
-            <tr>
-                <th width = "100%" height = "100" colspan = "2">
-                    <span style = "FONT-SIZE:20pt">전자문서검증시스템</span>
-                </th>
-            </tr>
-            <tr>
-                <td align = "center" colspan = "2">
-                    <input  type = "file">
-                </td>
-            </tr>
-            <tr>
-                <th>Hash 값 : </th>
-                <td>해쉬나오는 부분</td>
-            </tr>
-            <tr>
-                <th>컨트랙트 주소 : </th>
-                <td>컨트랙트 주소 나오는 부분</td>
-            </tr>
-            <tr>
-                <th>계정주소 : </th>
-                <td>계정주소 나오는 부분</td>
-            </tr>
-            <tr>
-                <td align = "center" colspan = "2">
-<button onclick="window.open('upload_complete.html','네이버','width=430,height=500,location=no,status=no,scrollbars=yes');">등록</button>
-                    <button onclick="location.href='index.html'">뒤로</button>
-                </td>
-            </tr>
-        </table>
+			<tr>
+				<th width = "100%" height = "100" colspan = "2">
+					<span style = "FONT-SIZE:20pt">전자문서검증시스템</span>
+				</th>
+			</tr>
+			<tr>
+				<td align = "center" colspan = "2">
+					<input  type = "file">
+				</td>
+			</tr>
+			<tr>
+				<th>Hash 값 : </th>
+				<td>해쉬나오는 부분</td>
+			</tr>
+			<tr>
+				<th>컨트랙트 주소 : </th>
+				<td>컨트랙트 주소 나오는 부분</td>
+			</tr>
+			<tr>
+				<th>계정주소 : </th>
+				<td><span id="account-Addr"></span></td>
+			</tr>
+			<tr>
+				<td align = "center" colspan = "2">
+					<button onclick="window.open('upload_complete.html','네이버','width=430,height=500,location=no,status=no,scrollbars=yes');">등록</button>
+					<button onclick="location.href='index.html'">뒤로</button>
+				</td>
+			</tr>
+		</table>
 	</body>
+	<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+	<!-- script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script -->
+	<script>
+		window.addEventListener('load', function() {
+			// Checking if Web3 has been injected by the browser (Mist/MetaMask)
+			if (typeof web3 !== 'undefined') {
+				// Use Mist/MetaMask's provider
+				window.web3 = new Web3(web3.currentProvider);
+			}
+			else {
+				console.log('No web3? You should consider trying MetaMask!')
+				// fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+				window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8080"));
+			}
+			// Now you can start your app & access web3 freely:
+			startApp();s
+		});
+		function startApp(){
+			web3.eth.getAccount(function(e,r){
+				document.getElementById('account-addr').innerHTML = getLink(r[0]);
+			});
+
+			getValue();
+		}
+		function getLink(addr) {
+		  return '<a target="_blank" href=https://testnet.etherscan.io/address/' + addr + '>' + addr +'</a>';
+		}
+		function getValue() {
+		  simpleStorage.get(function(e,r){
+			document.getElementById('storedData').innerHTML=r.toNumber();
+
+		  });
+		  web3.eth.getBlockNumber(function(e,r){
+			document.getElementById('lastBlock').innerHTML = r;
+		  });
+		}
+	</script>
 </html>
 
