@@ -59,7 +59,7 @@
 		});
 		function startApp(){
 			hashDBContract = web3.eth.contract(abi);
-			hashDB = simpleStorageContract.at(contractAddr);
+			hashDB = hashDBContract.at(contractAddr);
 			document.getElementById('contractAddr').innerHTML = getLink(contractAddr);
 			web3.eth.getAccounts(function(e,r){
 				document.getElementById('accountAddr').innerHTML = getLink(r[0]);
@@ -71,7 +71,7 @@
 		  return '<a target="_blank" href=https://testnet.etherscan.io/address/' + addr + '>' + addr +'</a>';
 		}
 		function getValue() {
-		  simpleStorage.get(function(e,r){
+		  hashDB.get(function(e,r){
 			document.getElementById('storedData').innerHTML=r.toNumber();
 
 		  });
