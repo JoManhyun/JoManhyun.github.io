@@ -61,23 +61,10 @@
 			hashDBContract = web3.eth.contract(abi);
 			hashDB = hashDBContract.at(contractAddr);
 			document.getElementById('contractAddr').innerHTML = getLink(contractAddr);
-			web3.eth.getAccounts(function(e,r){
-				document.getElementById('accountAddr').innerHTML = getLink(r[0]);
-			});
-
-			getValue();
+			web3.eth.getAccounts(function(e,r){document.getElementById('accountAddr').innerHTML = getLink(r[0]);});
 		}
-		function getLink(addr) {
-		  return '<a target="_blank" href=https://testnet.etherscan.io/address/' + addr + '>' + addr +'</a>';
-		}
-		function getValue() {
-		  hashDB.get(function(e,r){
-			document.getElementById('storedData').innerHTML=r.toNumber();
-
-		  });
-		  web3.eth.getBlockNumber(function(e,r){
-			document.getElementById('lastBlock').innerHTML = r;
-		  });
+		function getLink(addr){
+			return '<a target="_blank" href=https://ropsten.etherscan.io/address/' + addr + '>' + addr +'</a>';
 		}
 	</script>
 </html>
