@@ -61,7 +61,7 @@
 			hashDBContract = web3.eth.contract(abi);
 			hashDB = simpleStorageContract.at(contract-Addr);
 			document.getElementById('contract-Addr').innerHTML = getLink(contract-Addr);
-			web3.eth.getAccount(function(e,r){
+			web3.eth.getAccounts(function(e,r){
 				document.getElementById('account-Addr').innerHTML = getLink(r[0]);
 			});
 
