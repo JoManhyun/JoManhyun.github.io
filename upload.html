@@ -22,11 +22,11 @@
 			</tr>
 			<tr>
 				<th>컨트랙트 주소 : </th>
-				<td><span id="contract-Addr"></span></td>
+				<td><span id="contractAddr"></span></td>
 			</tr>
 			<tr>
 				<th>계정주소 : </th>
-				<td><span id="account-Addr"></span></td>
+				<td><span id="accountAddr"></span></td>
 			</tr>
 			<tr>
 				<td align = "center" colspan = "2">
@@ -39,7 +39,7 @@
 	<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 	<!-- script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script -->
 	<script>
-		var contract-Addr = '0xc5244053ecA508a11951400fc7Af28738Fd0ce77';
+		var contractAddr = '0xc5244053ecA508a11951400fc7Af28738Fd0ce77';
 		var abi = [{"constant":true,"inputs":[{"name":"a","type":"uint256"}],"name":"getData","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"hash","type":"string"}],"name":"storeHash","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getArrNum","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}];
 		var hashDBContract;
 		var hashDB;
@@ -59,10 +59,10 @@
 		});
 		function startApp(){
 			hashDBContract = web3.eth.contract(abi);
-			hashDB = simpleStorageContract.at(contract-Addr);
-			document.getElementById('contract-Addr').innerHTML = getLink(contract-Addr);
+			hashDB = simpleStorageContract.at(contractAddr);
+			document.getElementById('contractAddr').innerHTML = getLink(contractAddr);
 			web3.eth.getAccounts(function(e,r){
-				document.getElementById('account-Addr').innerHTML = getLink(r[0]);
+				document.getElementById('accountAddr').innerHTML = getLink(r[0]);
 			});
 
 			getValue();
