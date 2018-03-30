@@ -22,7 +22,7 @@
 			</tr>
 			<tr>
 				<th>컨트랙트 주소 : </th>
-				<td>컨트랙트 주소 나오는 부분</td>
+				<td><span id="contract-Addr"></span></td>
 			</tr>
 			<tr>
 				<th>계정주소 : </th>
@@ -39,6 +39,10 @@
 	<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 	<!-- script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script -->
 	<script>
+		var contract-Addr = '0xc5244053ecA508a11951400fc7Af28738Fd0ce77';
+		var abi = [{"constant":true,"inputs":[{"name":"a","type":"uint256"}],"name":"getData","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"hash","type":"string"}],"name":"storeHash","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getArrNum","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}];
+		var hashDBContract;
+		var hashDB;
 		window.addEventListener('load', function() {
 			// Checking if Web3 has been injected by the browser (Mist/MetaMask)
 			if (typeof web3 !== 'undefined') {
@@ -54,6 +58,9 @@
 			startApp();
 		});
 		function startApp(){
+			hashDBContract = web3.eth.contract(abi);
+			hashDB = simpleStorageContract.at(contract-Addr);
+			document.getElementById('contract-Addr').innerHTML = getLink(contract-Addr);
 			web3.eth.getAccount(function(e,r){
 				document.getElementById('account-Addr').innerHTML = getLink(r[0]);
 			});
