@@ -2,7 +2,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
-		<title>전자문서검증시스템</title>
+		<title>전자문서 등록</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
 		<meta name="author" content="">
@@ -26,23 +26,22 @@
 		<table border="1">
 			<tr>
 				<th colspan = "2">
-					<span style = "FONT-SIZE:20pt">전자문서검증시스템</span>
+					<span style = "FONT-SIZE:20pt">전자문서 등록</span>
 				</th>
 			</tr>
 			<tr>
 				<td align = "center" colspan = "2">
 					<div id="drop_zone" class="alert alert-block alert-success pagination-centered">파일을 등록하려면 클릭하세요.</div>
+					<div style="display: none"><input type="file" id="files" ></div>
 				</td>
 			</tr>
 			<tr>
 				<th align="right"> 파일 정보 </th>
-				<td align = "center" colspan="2">
-					<input type="file" id="files">
-				</td>
+				<td><div id="file_info"></div></td>
 			</tr>
 			<tr>
 				<th align="right">Hash 값 : </th>
-				<td><div id="list"></div></td>
+				<td><div id="hash_data"></div></td>
 			</tr>
 			<tr>
 				<th align="right">컨트랙트 주소 : </th>
@@ -152,10 +151,13 @@
 					event.stopPropagation();
 					event.preventDefault();
 
-					var i, output, files, file, workers, worker, reader, crypto_files, crypto_algos, max_crypto_file_size = 500 * 1024 * 1024;
+
+					var i, fileInfoArr, hashDataArr, files, file, workers, worker, reader, crypto_files, crypto_algos, max_crypto_file_size = 500 * 1024 * 1024;
 
 					files = event.dataTransfer ? event.dataTransfer.files : event.target.files;
-					output = [];
+					fileInfoArr = [];
+					hashDataArr = [];
+
 					crypto_files = [];
 
 					for (i = 0; i < files.length; i += 1) {
@@ -163,7 +165,9 @@
 						workers = [];
 						crypto_algos = [];
 
-						output.push('<td> <div class="progress progress-striped active" id="sha256_file_hash_', file_id, '"></div></td>');
+						fileInfoArr.push('<tr><td class="span12"><strong>', file.name, '</strong></td><td> (', file.type || 'n/a', ') - ', file.size, ' bytes</td></tr>');
+
+						hashDataArr.push('<td> <div class="progress progress-striped active" id="sha256_file_hash_', file_id, '"></div></td>');
 
 						if (is_crypto && file.size < max_crypto_file_size) {
 							crypto_algos.push({id: "#sha256_file_hash_" + file_id, name: "SHA-256"});
@@ -186,7 +190,10 @@
 						handle_crypto_files(crypto_files);
 					}
 
-					document.getElementById('list').innerHTML = output.join('') + document.getElementById('list').innerHTML;
+					document.getElementById('hash_data').innerHTML = hashDataArr.join('')
+
+					document.getElementById('file_info').innerHTML = fileInfoArr.join('')
+
 				}
 
 
