@@ -18,21 +18,21 @@ window.addEventListener('load', function() {
 });
 
 function startApp(){
-	//hashDBContract = web3.eth.contract(abi);
-	//hashDB = hashDBContract.at(contractAddr);
-	//document.getElementById('contractAddr').innerHTML = getLink(contractAddr);
+	hashDBContract = web3.eth.contract(abi);
+	hashDB = hashDBContract.at(contractAddr);
+	document.getElementById('contractAddr').innerHTML = getLink(contractAddr);
 	web3.eth.getAccounts(function(e,r){document.getElementById('accountAddr').innerHTML = getLink(r[0]);});
 }
 function getLink(addr){
 	return '<a target="_blank" href=https://ropsten.etherscan.io/address/' + addr + '>' + addr +'</a>';
 }
-function hash_data_str() {
+
+function store_hash_data() {
 	var str = $("#hash_data").text();
-	console.log(str);
-	test();
+	hashDB.storeHash(str, function(e,r){});
 }
 
-function file_info_str(){
+function search_hash_data(){
 	var sss = $("#file_info").text();
 	console.log(sss);
 }
