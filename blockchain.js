@@ -29,12 +29,11 @@ function getLink(addr){
 
 function store_hash_data() {
 	var str = $("#hash_data").text();
-	var num = hashDB.getArrNum(function(e,r){console.log(r.toNumber());});
-	hashDB.storeHash(str, function(e,r){document.getElementById('print_hash').innerHTML = "저장되었습니다." + num;});
+	var num = hashDB.getArrNum(function(e,r){});
+	hashDB.storeHash(str, function(e,r){});
 	console.log('hello');
 	console.log(str);
 	console.log(num);
-	console.log('나오는순서는hello,str,num');
 }
 
 function search_hash_data(){
