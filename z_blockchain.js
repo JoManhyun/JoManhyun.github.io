@@ -31,15 +31,15 @@ function store_hash_data() {
 	var str = $("#hash_data").text();
 	hashDB.storeHash(str, function(e,r){});
 	hashDB.getArrNum(function(e,r){document.getElementById('print_hash').innerHTML = r.toNumber();});
-	check_num_data();
-}
-
-function check_num_data(){
-	var num = Number($('print_hash').text());
-
 }
 
 function search_hash_data(){
-	var sss = $("#file_info").text();
-	hashDB.getData(function(e,r){});
+	var num = document.getElementById('search_num').value;
+	hashDB.getData(num, function(e,r){document.getElementById('load_hash').innerHTML = r.toString();});
+	var str = $("#hash_data").text();
+	var cmp_str = $("#load_data").text();
+	if (str == cmp_str){document.getElementById('result_cmp').innerHTML = "동일한 문서가 확실합니다.";}
+
+	else{document.getElementById('result_cmp').innerHTML = "동일한 문서가 아닌게 확실합니다.";}
 }
+

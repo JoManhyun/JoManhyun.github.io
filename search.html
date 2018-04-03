@@ -2,7 +2,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
-		<title>전자문서 등록</title>
+		<title>전자문서 검증</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
 		<meta name="author" content="">
@@ -26,8 +26,12 @@
 		<table border="1">
 			<tr>
 				<th colspan = "2">
-					<span style = "FONT-SIZE:20pt">전자문서 등록</span>
+					<span style = "FONT-SIZE:20pt">전자문서 검증</span>
 				</th>
+			</tr>
+			<tr>
+				<th align="right"> 번호 입력 : </th>
+				<td><input type="number" id="search_num"></td>
 			</tr>
 			<tr>
 				<td align = "center" colspan = "2">
@@ -48,13 +52,26 @@
 				<td><span id="contractAddr"></span></td>
 			</tr>
 			<tr>
+				<th align="right">불러온 해시코드 : </th>
+				<td><div id="load_hash"></div></td>
+			</tr>
+			<tr>
 				<th align="right">계정주소 : </th>
 				<td><span id="accountAddr"></span></td>
 			</tr>
 			<tr>
+				<th align="right">결과 :</th>
+				<td><div id="result_cmp"></div></td>
+			</tr>
+			<tr>
 				<td align = "center" colspan = "2">
-					<button onclick="window.open('upload_complete.html','네이버','width=430,height=500,location=no,status=no,scrollbars=yes');">조회</button>
+					<button onclick="search_hash_data()">조회</button>
 					<button onclick="location.href='index.html'">뒤로</button>
+				</td>
+			</tr>
+			<tr>
+				<td colspan = "2">
+					<div id="complete_search"></div>
 				</td>
 			</tr>
 		</table>
@@ -276,7 +293,7 @@
 
 	<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 	<!-- script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script -->
-	<script type="text/javascript" src="./blockchain.js"></script>
+	<script type="text/javascript" src="./z_blockchain.js"></script>
 
 </html>
 
