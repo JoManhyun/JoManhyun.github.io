@@ -38,8 +38,10 @@ function search_hash_data(){
 	hashDB.getData(num, function(e,r){document.getElementById('load_hash').innerHTML = r.toString();});
 	var str = $("#hash_data").text();
 	var cmp_str = $("#load_data").text();
+	console.log(typeof(str));
+	console.log(typeof(cmp_str));
+	console.log('str 다음 cmp_str');
 	if (str == cmp_str){document.getElementById('result_cmp').innerHTML = "동일한 문서가 확실합니다.";}
-
 	else{document.getElementById('result_cmp').innerHTML = "동일한 문서가 아닌게 확실합니다.";}
 }
 
