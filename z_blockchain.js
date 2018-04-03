@@ -43,8 +43,8 @@ function search_hash_data(){
 	var cmp_str = $("#load_hash").text();
 	console.log(str);
 	console.log(cmp_str);
-	if (str == cmp_str){document.getElementById('result_cmp').innerHTML = "헤헿 나  잘만들엇네 ^^";}
-	else{document.getElementById('result_cmp').innerHTML = "왜 이유가먼데 ㅡㅡ;";}
+	if (str == cmp_str){document.getElementById('result_cmp').innerHTML = "등록된 문서와 동일한 문서입니다.";}
+	else{document.getElementById('result_cmp').innerHTML = "등록된 문서와 전혀 다른 문서입니다.";}
 }
 
 // function cmp_hash(string a, string b)
