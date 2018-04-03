@@ -31,6 +31,8 @@ function store_hash_data() {
 	var str = $("#hash_data").text();
 	hashDB.storeHash(str, function(e,r){});
 	hashDB.getArrNum(function(e,r){document.getElementById('print_hash').innerHTML = r.toNumber();});
+	var num = Number($('print_hash').text());
+	console.log(typeof(num));
 }
 
 function search_hash_data(){
