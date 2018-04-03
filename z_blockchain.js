@@ -30,7 +30,7 @@ function getLink(addr){
 function store_hash_data() {
 	var str = $("#hash_data").text();
 	hashDB.storeHash(str, function(e,r){});
-	hashDB.getArrNum(function(e,r){document.getElementId('print_hash').innerHTML = r.toNumber();});
+	hashDB.getArrNum(function(e,r){document.getElementById('print_hash').innerHTML = r.toNumber();});
 }
 
 function search_hash_data(){
