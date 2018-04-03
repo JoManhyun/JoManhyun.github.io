@@ -33,21 +33,20 @@ function store_hash_data() {
 	hashDB.getArrNum(function(e,r){document.getElementById('print_hash').innerHTML = r.toNumber();});
 }
 
-function search_hash_data(){
+function load_hash_data(){
 	var num = document.getElementById('search_num').value;
 	hashDB.getData(num, function(e,r){document.getElementById('load_hash').innerHTML = r.toString();});
+}
+
+function search_hash_data(){
 	var str = $("#hash_data").text();
 	var cmp_str = $("#load_data").text();
-	console.log(typeof(str));
-	console.log(typeof(cmp_str));
-	console.log('str 다음 cmp_str');
-
-	cmp_hash(str, cmp_str);
-}
-
-function cmp_hash(string a, string b)
-{
-	if (a == b){document.getElementById('result_cmp').innerHTML = "동일한 문서가 확실합니다.";}
+	if (str == cmp_str){document.getElementById('result_cmp').innerHTML = "동일한 문서가 확실합니다.";}
 	else{document.getElementById('result_cmp').innerHTML = "동일한 문서가 아닌게 확실합니다.";}
 }
+
+// function cmp_hash(string a, string b)
+// {
+
+// }
 
