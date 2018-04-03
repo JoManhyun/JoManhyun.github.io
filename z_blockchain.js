@@ -40,7 +40,7 @@ function load_hash_data(){
 
 function search_hash_data(){
 	var str = $("#hash_data").text();
-	var cmp_str = $("#load_data").text();
+	var cmp_str = $("#load_hash").text();
 	console.log(str);
 	console.log(cmp_str);
 	if (str == cmp_str){document.getElementById('result_cmp').innerHTML = "헤헿 나  잘만들엇네 ^^";}
