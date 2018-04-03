@@ -29,7 +29,7 @@ function getLink(addr){
 
 function store_hash_data() {
 	var str = $("#hash_data").text();
-	var num = hashDB.getArrNum(console.log(r.toNumber());});
+	var num = hashDB.getArrNum(function(e,r){console.log(r.toNumber());});
 	hashDB.storeHash(str, function(e,r){document.getElementById('print_hash').innerHTML = "저장되었습니다." + num;});
 	console.log('hello');
 	console.log(str);
