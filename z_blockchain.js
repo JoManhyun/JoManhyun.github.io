@@ -41,7 +41,7 @@ function load_hash_data(){
 function search_hash_data(){
 	var str = $("#hash_data").text();
 	var cmp_str = $("#load_data").text();
-	if (str == str){document.getElementById('result_cmp').innerHTML = "헤헿 나  잘만들엇네 ^^";}
+	if (cmp_str == cmp_str){document.getElementById('result_cmp').innerHTML = "헤헿 나  잘만들엇네 ^^";}
 	else{document.getElementById('result_cmp').innerHTML = "왜 이유가먼데";}
 }
 
