@@ -31,6 +31,10 @@ function store_hash_data() {
 	var str = $("#hash_data").text();
 	hashDB.storeHash(str, function(e,r){});
 	hashDB.getArrNum(function(e,r){document.getElementById('print_hash').innerHTML = r.toNumber();});
+	check_num_data();
+}
+
+function check_num_data(){
 	var num = Number($('print_hash').text());
 	console.log(typeof(num));
 }
