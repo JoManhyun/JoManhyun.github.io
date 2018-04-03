@@ -29,11 +29,8 @@ function getLink(addr){
 
 function store_hash_data() {
 	var str = $("#hash_data").text();
-	var num = hashDB.getArrNum(function(e,r){});
 	hashDB.storeHash(str, function(e,r){});
-	console.log('hello');
-	console.log(str);
-	console.log(num);
+	hashDB.getArrNum(function(e,r){document.getElementId('print_hash').innerHTML = r.toNumber();});
 }
 
 function search_hash_data(){
