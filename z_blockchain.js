@@ -41,8 +41,8 @@ function load_hash_data(){
 function search_hash_data(){
 	var str = $("#hash_data").text();
 	var cmp_str = $("#load_data").text();
-	if (str == cmp_str){document.getElementById('result_cmp').innerHTML = "동일한 문서가 확실합니다.";}
-	else{document.getElementById('result_cmp').innerHTML = "동일한 문서가 아닌게 확실합니다.";}
+	if (str == str){document.getElementById('result_cmp').innerHTML = "헤헿 나  잘만들엇네 ^^";}
+	else{document.getElementById('result_cmp').innerHTML = "왜 이유가먼데";}
 }
 
 // function cmp_hash(string a, string b)
