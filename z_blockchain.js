@@ -44,7 +44,7 @@ function search_hash_data(){
 	console.log(str);
 	console.log(cmp_str);
 	if (str == cmp_str){document.getElementById('result_cmp').innerHTML = "헤헿 나  잘만들엇네 ^^";}
-	else{document.getElementById('result_cmp').innerHTML = "왜 이유가먼데";}
+	else{document.getElementById('result_cmp').innerHTML = "왜 이유가먼데 ㅡㅡ;";}
 }
 
 // function cmp_hash(string a, string b)
