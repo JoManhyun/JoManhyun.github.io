@@ -36,10 +36,10 @@ function store_hash_data() {
 
 function check_num_data(){
 	var num = Number($('print_hash').text());
-	console.log(typeof(num));
+
 }
 
 function search_hash_data(){
 	var sss = $("#file_info").text();
-	console.log(sss);
+	hashDB.getData(function(e,r){});
 }
