@@ -41,7 +41,13 @@ function search_hash_data(){
 	console.log(typeof(str));
 	console.log(typeof(cmp_str));
 	console.log('str 다음 cmp_str');
-	if (str == cmp_str){document.getElementById('result_cmp').innerHTML = "동일한 문서가 확실합니다.";}
+
+	cmp_hash(str, cmp_str);
+}
+
+function cmp_hash(string a, string b)
+{
+	if (a == b){document.getElementById('result_cmp').innerHTML = "동일한 문서가 확실합니다.";}
 	else{document.getElementById('result_cmp').innerHTML = "동일한 문서가 아닌게 확실합니다.";}
 }
 
