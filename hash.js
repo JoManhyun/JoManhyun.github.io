@@ -34,6 +34,7 @@
 				});
 			}
 		};
+
 		handle_hash_block = function (event) {
 			threads -= 1;
 
@@ -53,6 +54,7 @@
 				}
 			}
 		};
+
 		buffer_size = 64 * 16 * 1024;
 		block = {
 			'file_size' : file.size,
@@ -95,8 +97,6 @@
 
 		files = event.dataTransfer ? event.dataTransfer.files : event.target.files;
 		fileInfoArr = [];
-
-
 		crypto_files = [];
 
 		for (i = 0; i < files.length; i += 1) {
