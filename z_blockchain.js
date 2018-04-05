@@ -40,11 +40,12 @@ function store_hash_data() {
 	var filter = web3.eth.filter('latest');
 
 	filter.watch(function(e,r){
-		get_hashArrNum();
 		web3.eth.getTransaction(txid, function(e,r){
 			if(r != null && r.blockNumber > 0) {
 				document.getElementById('pending').innerHTML = '등록완료';
 				document.getElementById('pending').style.cssText = 'color:green;';
+				get_hashArrNum();
+				document.getElementById('hashArrNum').style.css.Text = 'color:green;';
 				filter.stopWatching();
 			}
 		});
