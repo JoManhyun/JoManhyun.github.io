@@ -42,6 +42,7 @@ function store_hash_data() {
 				document.getElementById('pending').innerHTML = '(기록된블록: '+ r.blockNumber + ')';
 				document.getElementById('pending').style.cssText = 'color:green;';
 				hashDB.getArrNum(function(e,r){document.getElementById('hashArrNum') = r.toNumber();});
+				filter.stopWatching();
 			}
 		});
 	});
