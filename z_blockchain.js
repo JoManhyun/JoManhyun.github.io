@@ -32,8 +32,9 @@ function store_hash_data() {
 	var str = $("#hash_data").text();
 	var txid;
 	hashDB.storeHash(str, function(e,r){
-		document.getElementById('tranAddr').innerHTML = r+'<span id="pending" style="color:red;">(pending)</span>';
-		document.getElementById('num').innerHTML = '<span id = "hashArrNum" style="color:red;">등록 중 잠시만 기다려주세요.</span>';
+		document.getElementById('tranAddr').innerHTML = r;
+		document.getElementById('blockNum').innerHTML = '<span id="pending" style="color:red;">블록체인에 등록 중 입니다.</span>';
+		document.getElementById('num').innerHTML = '<span id = "hashArrNum">등록이 완료되면 잦으실 때 사용하실 번호가 출력됩니다.</span>';
 	txid = r;
 	});
 
@@ -45,7 +46,6 @@ function store_hash_data() {
 				document.getElementById('pending').innerHTML = '등록완료';
 				document.getElementById('pending').style.cssText = 'color:green;';
 				get_hashArrNum();
-				document.getElementById('hashArrNum').style.css.Text = 'color:green;';
 				filter.stopWatching();
 			}
 		});
