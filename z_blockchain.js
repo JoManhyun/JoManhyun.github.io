@@ -2,14 +2,16 @@ var contractAddr = '0xD8309a0C1147BBBDD9b3d24d9504764BB818c253';
 var abi = [{"constant":true,"inputs":[{"name":"a","type":"uint256"}],"name":"getData","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"hash","type":"string"}],"name":"storeHash","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getArrNum","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}];
 var hashDBContract;
 var hashDB;
+
 window.addEventListener('load', function() {
 	if (typeof web3 !== 'undefined') {
-				window.web3 = new Web3(web3.currentProvider);
+		window.web3 = new Web3(web3.currentProvider);
 	}
 	else {
 		console.log('No web3? You should consider trying MetaMask!')
 		window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 	}
+
 	startApp();
 });
 
@@ -17,9 +19,12 @@ function startApp(){
 	hashDBContract = web3.eth.contract(abi);
 	hashDB = hashDBContract.at(contractAddr);
 	document.getElementById('contractAddr').innerHTML = getLink(contractAddr);
-	web3.eth.getAccounts(function(e,r){document.getElementById('accountAddr').innerHTML = getLink(r[0]);});
+	web3.eth.getAccounts(function(e,r){
+		document.getElementById('accountAddr').innerHTML = getLink(r[0]);
+	});
 	getValue();
 }
+
 function getLink(addr){
 	return '<a target="_blank" href=https://ropsten.etherscan.io/address/' + addr + '>' + addr +'</a>';
 }
@@ -39,9 +44,11 @@ function store_hash_data() {
 		getValue();
 		web3.eth.getTransaction(txid, function(e,r){
 			if(r != null && r.blockNumber > 0) {
-				document.getElementById('pending').innerHTML = '(기록된블록: '+ r.blockNumber + ')';
+				document.getElementById('pending').innerHTML = '등록완료';
 				document.getElementById('pending').style.cssText = 'color:green;';
-				hashDB.getArrNum(function(e,r){document.getElementById('hashArrNum') = r.toNumber();});
+				// hashDB.getArrNum(function(e,r){
+				// 	document.getElementById('hashArrNum') = r.toNumber();
+				// });
 				filter.stopWatching();
 			}
 		});
