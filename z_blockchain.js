@@ -22,7 +22,6 @@ function startApp(){
 	web3.eth.getAccounts(function(e,r){
 		document.getElementById('accountAddr').innerHTML = getLink(r[0]);
 	});
-	getValue();
 }
 
 function getLink(addr){
@@ -41,20 +40,24 @@ function store_hash_data() {
 	var filter = web3.eth.filter('latest');
 
 	filter.watch(function(e,r){
-		getValue();
+		get_hashArrNum();
 		web3.eth.getTransaction(txid, function(e,r){
 			if(r != null && r.blockNumber > 0) {
 				document.getElementById('pending').innerHTML = '등록완료';
 				document.getElementById('pending').style.cssText = 'color:green;';
-				// hashDB.getArrNum(function(e,r){
-				// 	document.getElementById('hashArrNum') = r.toNumber();
-				// });
 				filter.stopWatching();
 			}
 		});
 	});
 }
-
+function get_hashArrNum(){
+	hashDB.getArrNum(function(e,r){
+		document.getElementById('hashArrNum').innerHTML = r.toNumber();
+	});
+	web3.eth.getBlockNumber(function(e,r){
+		document.getElementById('lastBlock').innerHTML = r;
+	});
+}
 function load_hash_data(){
 	var num = document.getElementById('search_num').value;
 	hashDB.getData(num, function(e,r){document.getElementById('load_hash').innerHTML = r.toString();});
