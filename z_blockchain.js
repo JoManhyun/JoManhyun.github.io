@@ -3,17 +3,13 @@ var abi = [{"constant":true,"inputs":[{"name":"a","type":"uint256"}],"name":"get
 var hashDBContract;
 var hashDB;
 window.addEventListener('load', function() {
-	// Checking if Web3 has been injected by the browser (Mist/MetaMask)
 	if (typeof web3 !== 'undefined') {
-				// Use Mist/MetaMask's provider
 				window.web3 = new Web3(web3.currentProvider);
 	}
 	else {
 		console.log('No web3? You should consider trying MetaMask!')
-		// fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
 		window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 	}
-	// Now you can start your app & access web3 freely:
 	startApp();
 });
 
@@ -22,6 +18,7 @@ function startApp(){
 	hashDB = hashDBContract.at(contractAddr);
 	document.getElementById('contractAddr').innerHTML = getLink(contractAddr);
 	web3.eth.getAccounts(function(e,r){document.getElementById('accountAddr').innerHTML = getLink(r[0]);});
+	getValue();
 }
 function getLink(addr){
 	return '<a target="_blank" href=https://ropsten.etherscan.io/address/' + addr + '>' + addr +'</a>';
@@ -29,8 +26,25 @@ function getLink(addr){
 
 function store_hash_data() {
 	var str = $("#hash_data").text();
-	hashDB.storeHash(str, function(e,r){});
-	hashDB.getArrNum(function(e,r){document.getElementById('print_hash').innerHTML = r.toNumber();});
+	var txid;
+	hashDB.storeHash(str, function(e,r){
+		document.getElementById('tranAddr').innerHTML = r+'<span id="pending" style="color:red;">(pending)</span>';
+		document.getElementById('num').innerHTML = '<span id = "hashArrNum" style="color:red;">등록 중 잠시만 기다려주세요.</span>';
+	txid = r;
+	});
+
+	var filter = web3.eth.filter('latest');
+
+	filter.watch(function(e,r){
+		getValue();
+		web3.eth.getTransaction(txid, function(e,r){
+			if(r != null && r.blockNumber > 0) {
+				document.getElementById('pending').innerHTML = '(기록된블록: '+ r.blockNumber + ')';
+				document.getElementById('pending').style.cssText = 'color:green;';
+				hashDB.getArrNum(function(e,r){document.getElementById('hashArrNum') = r.toNumber();});
+			}
+		});
+	});
 }
 
 function load_hash_data(){
