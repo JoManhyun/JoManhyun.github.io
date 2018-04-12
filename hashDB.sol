@@ -17,14 +17,17 @@ contract HashDB{
 		getArrNum();
 	}
 
+	function getArrNum() public constant returns (uint) {
+	    return count - 1;
+	}
+
 	function binarySearch(uint a)public constant returns(uint, string){
 		uint low = 0;
 		uint mid;
 		uint high = count - 1;
 		uint size = count - 1;
-		hashStruct.num = size;
-		hashStruct.hashValue = hashArr[size];
-		searchData.push(hashStruct);
+		hashStruct data = hashStruct(a, hashArr[a]);
+		searchData.push(data);
 
 		while(low <= high) {
 			mid = (low + high)/2;
