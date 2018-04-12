@@ -7,42 +7,32 @@ contract HashDB{
 		uint num;
 		string hashValue;
 	}
-	hashStruct[] searchData;
+	hashStruct[] public searchData;
 
 	uint count = 0;
 
 	function storeHash(string hash) public{
 		hashArr.push(hash);
 		count = count + 1;
-		getArrNum();
 	}
 
 	function getArrNum() public constant returns (uint) {
 	    return count - 1;
 	}
 
-	function binarySearch(uint a)public constant returns(uint, string){
-		uint low = 0;
-		uint mid;
-		uint high = count - 1;
-		uint size = count - 1;
-		hashStruct data = hashStruct(a, hashArr[a]);
-		searchData.push(data);
-
-		while(low <= high) {
-			mid = (low + high)/2;
-			if(a == searchData[size].num && hashArr[a] == searchData[size].hashValue) {
-				return mid;
-			}
-			else if(a > searchData[size].num) {
-				low = mid + 1;
-			}
-			else {
-				high = mid - 1;
+	function sunchaSearch(uint a)public constant returns(uint){
+		uint size = getArrNum();
+		uint local = 0;
+		for(uint i=0; i<size; i++) {
+				searchData.push(hashStruct(i, hashArr[i]));
+		}
+		while(local<=size && searchData[local].num != a) {
+			local = local +1;
+			if(local > a) {
+				local = 0;
 			}
 		}
-		return searchData[a].num;
-		return searchData[a].hashValue;
+		return local;
 	}
 
 	function getData(uint a) public constant returns(string) {
