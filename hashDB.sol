@@ -32,7 +32,7 @@ contract HashDB{
 				local = 0;
 			}
 		}
-		return local;
+		return searchData[local].num;
 	}
 
 	function getData(uint a) public constant returns(string) {
