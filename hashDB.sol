@@ -32,7 +32,7 @@ contract HashDB{
 	}
 
 	function getData(uint a) public constant returns(string) {
-	    return hashData[a].hash;
+	    return hashData[a].hashValue;
 	}
 
 
