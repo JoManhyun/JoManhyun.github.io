@@ -2,7 +2,6 @@ pragma solidity ^0.4.21;
 
 contract HashDB{
 
-	string[] hashArr;
 	struct hashStruct {
 		uint num;
 		string hashValue;
@@ -12,7 +11,7 @@ contract HashDB{
 	uint count = 0;
 
 	function storeHash(string hash) public{
-		hashArr.push(hash);
+		searchData[count].hashValue.push(hash);
 		count = count + 1;
 	}
 
@@ -20,7 +19,7 @@ contract HashDB{
 	    return count - 1;
 	}
 
-	function sunchaSearch(uint a)public constant returns(uint){
+	function sunchaSearch(uint a)public constant returns(uint) {
 		uint size = getArrNum();
 		uint local = 0;
 		for(uint i=0; i<size; i++) {
