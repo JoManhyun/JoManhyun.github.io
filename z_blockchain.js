@@ -72,9 +72,3 @@ function search_hash_data(){
 	if (str == cmp_str){document.getElementById('result_cmp').innerHTML = "등록된 문서와 동일한 문서입니다.";}
 	else{document.getElementById('result_cmp').innerHTML = "등록된 문서와 전혀 다른 문서입니다.";}
 }
-
-// function cmp_hash(string a, string b)
-// {
-
-// }
-
