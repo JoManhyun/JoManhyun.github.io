@@ -10,8 +10,8 @@ contract HashDB{
 
 	uint count = 0;
 
-	function storeHash(string hash) public{
-		hashData[count].hashValue.push(hash);
+	function storeData(string hash) public{
+		hashData.push(hashStruct((count, hash));
 		count = count + 1;
 	}
 
@@ -22,10 +22,7 @@ contract HashDB{
 	function sunchaSearch(uint a)public constant returns(uint) {
 		uint size = getArrNum();
 		uint local = 0;
-		for(uint i=0; i<size; i++) {
-				hashData.push(hashStruct(i, hashArr[i]));
-		}
-		while(local<=size && searchData[local].num != a) {
+		while(local<=size && hashData[local].num != a) {
 			local = local +1;
 			if(local > a) {
 				local = 0;
