@@ -15,12 +15,8 @@ contract HashDB{
 		count = count + 1;
 	}
 
-	function getArrNum() public constant returns (uint) {
-	    return count - 1;
-	}
-
 	function sunchaSearch(uint a)public constant returns(uint) {
-		uint size = getArrNum();
+		uint size = count - 1;
 		uint local = 0;
 		while(local<=size && hashData[local].num != a) {
 			local = local +1;
@@ -34,6 +30,4 @@ contract HashDB{
 	function getData(uint a) public constant returns(string) {
 	    return hashData[a].hashValue;
 	}
-
-
 }
