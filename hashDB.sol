@@ -6,12 +6,12 @@ contract HashDB{
 		uint num;
 		string hashValue;
 	}
-	hashStruct[] public searchData;
+	hashStruct[] public hashData;
 
 	uint count = 0;
 
 	function storeHash(string hash) public{
-		searchData[count].hashValue.push(hash);
+		hashData[count].hashValue.push(hash);
 		count = count + 1;
 	}
 
@@ -23,7 +23,7 @@ contract HashDB{
 		uint size = getArrNum();
 		uint local = 0;
 		for(uint i=0; i<size; i++) {
-				searchData.push(hashStruct(i, hashArr[i]));
+				hashData.push(hashStruct(i, hashArr[i]));
 		}
 		while(local<=size && searchData[local].num != a) {
 			local = local +1;
@@ -31,11 +31,11 @@ contract HashDB{
 				local = 0;
 			}
 		}
-		return searchData[local].num;
+		return hashData[local].num;
 	}
 
 	function getData(uint a) public constant returns(string) {
-	    return hashArr[a];
+	    return hashData[a].hash;
 	}
 
 
