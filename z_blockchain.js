@@ -1,5 +1,6 @@
-var contractAddr = '0xD8309a0C1147BBBDD9b3d24d9504764BB818c253';
-var abi = [{"constant":true,"inputs":[{"name":"a","type":"uint256"}],"name":"getData","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"hash","type":"string"}],"name":"storeHash","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getArrNum","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}];
+var contractAddr = '0xb3786436d46c7d4202ae024cb8cb3462a48e48fb';
+var abi = [{"constant":true,"inputs":[{"name":"a","type":"uint256"}],"name":"getData","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"hashData","outputs":[{"name":"num","type":"uint256"},{"name":"hashValue","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"a","type":"uint256"}],"name":"sunchaSearch","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"hash","type":"string"}],"name":"storeData","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}];
+
 var hashDBContract;
 var hashDB;
 
@@ -51,14 +52,16 @@ function store_hash_data() {
 		});
 	});
 }
+
 function get_hashArrNum(){
-	hashDB.getArrNum(function(e,r){
+	hashDB.sunchaSearch(function(e,r){
 		document.getElementById('hashArrNum').innerHTML = r.toNumber();
 	});
 	web3.eth.getBlockNumber(function(e,r){
 		document.getElementById('lastBlock').innerHTML = r;
 	});
 }
+
 function load_hash_data(){
 	var num = document.getElementById('search_num').value;
 	hashDB.getData(num, function(e,r){document.getElementById('load_hash').innerHTML = r.toString();});
