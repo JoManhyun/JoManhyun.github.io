@@ -9,21 +9,23 @@ contract HashDB{
 	hashStruct[] public hashData;
 
 	uint count = 0;
+    string tmp;
 
-	function storeData(string hash) public{
+	function storeData(string hash)public{
 		hashData.push(hashStruct(count, hash));
+        tmp = hashData[count].tmp;
 		count = count + 1;
 	}
 
-	function sunchaSearch(uint a)public constant returns(uint) {
+	function sunchaSearch()public constant returns(uint) {
 		uint size = count - 1;
-		uint local = 0;
-		while(local<=size && hashData[local].num != a) {
-			local = local +1;
-			if(local > a) {
-				local = 0;
-			}
-		}
+        uint local;
+		for(uint i = 0; i<size; i++) {
+            if(keccak256(hashData[i].hashValue) == keccak256(tmp)) {
+                local = i;
+                break;
+            }
+        }
 		return hashData[local].num;
 	}
 
