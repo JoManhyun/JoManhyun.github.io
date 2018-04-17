@@ -78,9 +78,10 @@ function search_hash_data(){
 
 function test(){
 	var str = $("#hash_data").text();
+	console.log("str : " + str);
+	console.log(typeof(str));
 	var hex = parseInt(str,16);
 
 	console.log("hex : " + hex);
 	console.log(typeof(hex));
-
 }
