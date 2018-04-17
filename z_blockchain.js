@@ -75,3 +75,12 @@ function search_hash_data(){
 	if (str == cmp_str){document.getElementById('result_cmp').innerHTML = "등록된 문서와 동일한 문서입니다.";}
 	else{document.getElementById('result_cmp').innerHTML = "등록된 문서와 전혀 다른 문서입니다.";}
 }
+
+function test(){
+	var str = $("#hash_data").text();
+	var hex = parseInt(str,16);
+
+	console.log("hex : " + hex);
+	console.log(typeof(hex));
+
+}
