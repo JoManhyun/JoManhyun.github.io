@@ -77,7 +77,7 @@ function search_hash_data(){
 }
 
 function test(){
-	var str = $("#hash_data").text();
+	var str = "0x" + $("#hash_data").text();
 	console.log("str : " + str);
 	console.log(typeof(str));
 	var hex = Number(str);
