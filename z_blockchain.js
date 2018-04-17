@@ -32,7 +32,7 @@ function getLink(addr){
 function store_hash_data() {
 	var str = $("#hash_data").text();
 	var txid;
-	hashDB.storeHash(str, function(e,r){
+	hashDB.storeData(str, function(e,r){
 		document.getElementById('tranAddr').innerHTML = r;
 		document.getElementById('blockNum').innerHTML = '<span id="pending" style="color:red;">블록체인에 등록 중 입니다.</span>';
 		document.getElementById('num').innerHTML = '<span id = "hashArrNum">등록이 완료되면 잦으실 때 사용하실 번호가 출력됩니다.</span>';
