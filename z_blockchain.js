@@ -80,8 +80,7 @@ function test(){
 	var str = "0x" + $("#hash_data").text();
 	console.log("str : " + str);
 	console.log(typeof(str));
-	var hex = Number(str);
-
+	var hex = parseInt(str, 16);
 	console.log("hex : " + hex);
 	console.log(typeof(hex));
 }
