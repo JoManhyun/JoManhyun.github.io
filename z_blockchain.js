@@ -1,4 +1,5 @@
-var contractAddr = '0x5be5947c40c94bb305abb35669183f2cc5fcff87';
+var contractAddr = '0x65380c3af43235a80120e7925a25af9f4394eaf7';
+
 var abi = [{"constant":true,"inputs":[{"name":"a","type":"uint256"}],"name":"getData","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"hashData","outputs":[{"name":"num","type":"uint256"},{"name":"hashValue","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"sunchaSearch","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"hash","type":"string"}],"name":"storeData","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}];
 
 var hashDBContract;
