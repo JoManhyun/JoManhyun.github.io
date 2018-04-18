@@ -1,5 +1,5 @@
-var contractAddr = '0xb3786436d46c7d4202ae024cb8cb3462a48e48fb';
-var abi = [{"constant":true,"inputs":[{"name":"a","type":"uint256"}],"name":"getData","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"hashData","outputs":[{"name":"num","type":"uint256"},{"name":"hashValue","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"a","type":"uint256"}],"name":"sunchaSearch","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"hash","type":"string"}],"name":"storeData","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}];
+var contractAddr = '0x5be5947c40c94bb305abb35669183f2cc5fcff87';
+var abi = [{"constant":true,"inputs":[{"name":"a","type":"uint256"}],"name":"getData","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"hashData","outputs":[{"name":"num","type":"uint256"},{"name":"hashValue","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"sunchaSearch","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"hash","type":"string"}],"name":"storeData","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}];
 
 var hashDBContract;
 var hashDB;
@@ -8,6 +8,7 @@ window.addEventListener('load', function() {
 	if (typeof web3 !== 'undefined') {
 		window.web3 = new Web3(web3.currentProvider);
 	}
+
 	else {
 		console.log('No web3? You should consider trying MetaMask!')
 		window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
@@ -54,12 +55,18 @@ function store_hash_data() {
 }
 
 function get_hashArrNum(){
-	hashDB.sunchaSearch(function(e,r){
-		document.getElementById('hashArrNum').innerHTML = r.toNumber();
-	});
-	web3.eth.getBlockNumber(function(e,r){
-		document.getElementById('lastBlock').innerHTML = r;
-	});
+	hashDB.sunchaSearch(
+		function(e,r)
+		{
+			document.getElementById('hashArrNum').innerHTML = r.toNumber();
+		}
+	);
+
+	web3.eth.getBlockNumber(
+		function(e,r){
+			document.getElementById('lastBlock').innerHTML = r;
+		}
+	);
 }
 
 function load_hash_data(){
@@ -74,13 +81,4 @@ function search_hash_data(){
 	console.log(cmp_str);
 	if (str == cmp_str){document.getElementById('result_cmp').innerHTML = "등록된 문서와 동일한 문서입니다.";}
 	else{document.getElementById('result_cmp').innerHTML = "등록된 문서와 전혀 다른 문서입니다.";}
-}
-
-function test(){
-	var str = "0x" + $("#hash_data").text();
-	console.log("str : " + str);
-	console.log(typeof(str));
-	var hex = parseInt(str, 16);
-	console.log("hex : " + hex);
-	console.log(typeof(hex));
 }
