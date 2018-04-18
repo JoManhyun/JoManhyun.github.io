@@ -18,7 +18,7 @@ contract HashDB{
 	}
 
 	function sunchaSearch()public constant returns(uint) {
-		uint size = count;
+		uint size = count - 1;
 		uint local;
 		for(uint i = 0; i<size; i++) {
 			if(keccak256(hashData[i].hashValue) == keccak256(tmp)) {
