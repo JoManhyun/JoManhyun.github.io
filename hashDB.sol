@@ -13,7 +13,7 @@ contract HashDB{
 
 	function storeData(string hash)public{
 		hashData.push(hashStruct(count, hash));
-        tmp = hashData[count].tmp;
+        tmp = hashData[count].hashValue;
 		count = count + 1;
 	}
 
