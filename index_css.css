@@ -26,7 +26,6 @@ body {
 }
 .container {
     overflow: hidden;
-    background: url('img/background.png') repeat-y #fff;
 }
 .nav {
     float: left;
