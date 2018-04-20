@@ -43,7 +43,7 @@ body {
 .navContent {
     margin: 4px 0;
 }
-.navLink {
+.navLink, .subtitle {
     display: block;
     text-decoration: none;
     padding: 4px 10px;
