@@ -33,6 +33,12 @@ body {
     margin-right: 5%;
     margin-bottom : 20px;
 }
+.nav li ul {
+    display: none;
+}
+.nav li:hober {
+    display: block;
+}
 .navList {
     list-style: none;
     margin: 0;
