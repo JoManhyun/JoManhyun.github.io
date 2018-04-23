@@ -11,7 +11,7 @@ body {
 .header {
     padding: 40px 10px;
     text-align: center;
-    background: #eee;
+    border-bottom: 1px solid #aaa;
     margin-bottom: 20px;
 }
 .logo {
@@ -26,10 +26,10 @@ body {
 }
 .nav {
     float: left;
-    width: 15%;
+    width: 12%;
     background: #333;
     color: #fff;
-    margin-right: 5%;
+    margin-right: 3%;
 }
 .navList {
     list-style: none;
