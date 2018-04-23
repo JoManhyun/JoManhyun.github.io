@@ -26,10 +26,11 @@ body {
 }
 .nav {
     float: left;
-    width: 12%;
+    width: 15%;
     background: #333;
     color: #fff;
-    margin-right: 3%;
+    margin-right: 5%;
+    margin-bottom : 20px;
 }
 .navList {
     list-style: none;
@@ -50,7 +51,8 @@ body {
 }
 .content {
     float: right;
-    width: 85%;
+    width: 80%;
+    margin-bottom: 20px;
 }
 .footer {
     text-align: center;
