@@ -31,13 +31,14 @@ body {
     background: #333;
     color: #fff;
     margin-right: 5%;
-    margin-bottom : 20px;
+    margin-bottom: 20px;
 }
 .nav ul ul {
     display: none;
 }
-.nav ul li:hover ul{
+.nav ul>li:hover ul{
     display: block;
+    background: #333;
 }
 .navList {
     list-style: none;
