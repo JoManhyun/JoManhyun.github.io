@@ -24,9 +24,6 @@ body {
     width: 30px;
     height: 30px;
 }
-.container {
-    overflow: hidden;
-}
 .nav {
     float: left;
     width: 15%;
@@ -60,4 +57,5 @@ body {
     border-top: 1px solid #aaa;
     margin: 20px 20px 0;
     font-size: 12px;
+    clear: both;
 }
