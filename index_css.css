@@ -33,10 +33,10 @@ body {
     margin-right: 5%;
     margin-bottom : 20px;
 }
-.nav li ul {
+.nav ul li ul {
     display: none;
 }
-.nav li:hober {
+.nav ul li:hober {
     display: block;
 }
 .navList {
