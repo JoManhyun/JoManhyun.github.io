@@ -57,7 +57,7 @@ body {
 .navLink:hover {
     background: #54dbde;
 }
-.navLink:active iframe {
+.navLink:active:upload {
     display: block;
 }
 .content {
