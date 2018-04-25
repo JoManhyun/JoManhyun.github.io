@@ -24,7 +24,6 @@ function startApp(){
 	hashDB = hashDBContract.at(contractAddr);
 	document.getElementById('contractAddr').innerHTML = getLink(contractAddr);
 	document.getElementById('accountAddr').innerHTML = getLink(accountAddr);
-
 }
 
 function getLink(addr){
