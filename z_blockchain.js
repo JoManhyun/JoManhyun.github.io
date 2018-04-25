@@ -1,5 +1,4 @@
 var contractAddr = '0x65380c3af43235a80120e7925a25af9f4394eaf7';
-var accountAddr = "0x91d0ef5cbdd81d1ca3b879b94810172acecc17ed";
 
 var abi = [{"constant":true,"inputs":[{"name":"a","type":"uint256"}],"name":"getData","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"hashData","outputs":[{"name":"num","type":"uint256"},{"name":"hashValue","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"sunchaSearch","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"hash","type":"string"}],"name":"storeData","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}];
 
@@ -13,7 +12,7 @@ window.addEventListener('load', function() {
 
 	else {
 		console.log('No web3? You should consider trying MetaMask!')
-		window.web3 = new Web3(new Web3.providers.HttpProvider("http://ropsten.infura.io/"));
+		window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 	}
 
 	startApp();
@@ -23,7 +22,9 @@ function startApp(){
 	hashDBContract = web3.eth.contract(abi);
 	hashDB = hashDBContract.at(contractAddr);
 	document.getElementById('contractAddr').innerHTML = getLink(contractAddr);
-	document.getElementById('accountAddr').innerHTML = getLink(accountAddr);
+	web3.eth.getAccounts(function(e,r){
+		document.getElementById('accountAddr').innerHTML = getLink(r[0]);
+	});
 }
 
 function getLink(addr){
