@@ -7,7 +7,6 @@ body {
     width: 1000px;
     margin: 0 auto;
     border: 1px solid #aaa;
-    overflow: scroll;
 }
 .header {
     margin: 20px 20px 0;
