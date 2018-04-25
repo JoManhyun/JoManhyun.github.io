@@ -57,18 +57,14 @@ body {
 .navLink:hover {
     background: #54dbde;
 }
-.navLink:active:upload {
-    display: block;
-}
 .content {
     float: right;
-    width: 800px;
+    width: 850px;
     margin-bottom: 20px;
 }
 #upload {
-    overflow: scroll;
     display: none;
-    width: 79%;
+    width: 820px;
 }
 .footer {
     text-align: center;

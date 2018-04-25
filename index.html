@@ -15,7 +15,7 @@
 			<div class="nav">
 				<ul class="navList">
 					<li class="navContent">
-						<a href="" class="navLink" target="_self">문서등록</a>
+						<a href="" class="navLink" target="_self" onclick="displayChange(upload)">문서등록</a>
 					</li>
 					<li class="navContent">
 						<a href="search.html" class="navLink">문서검증</a>
@@ -42,5 +42,16 @@
 			<div class="footer">
 			</div>
 		</div>
+		<script>
+			function displayChange(id) {
+				var name = document.getElementById(id);
+				if(name.style.display == "none") {
+					name.style.display = "block";
+				}
+				else {
+					name.style.display = "none";
+				}
+			}
+		</script>
 	</body>
 </html>
