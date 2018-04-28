@@ -1,0 +1,738 @@
+<html lang="en" ng-app="mewApp" class="ng-scope"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>MyEtherWallet.com</title>
+  <meta property="og:title" content="MyEtherWallet.com: Your Key to Ethereum">
+  <meta property="og:site_name" content="MyEtherWallet.com: Your Key to Ethereum">
+  <meta name="twitter:title" content="MyEtherWallet.com: Your Key to Ethereum">
+  <meta name="apple-mobile-web-app-title" content="MyEtherWallet.com: Your Key to Ethereum">
+  <link href="https://www.myetherwallet.com" rel="canonical">
+  <meta content="https://www.myetherwallet.com" property="og:url">
+  <meta content="https://www.myetherwallet.com" name="twitter:url">
+  <link rel="stylesheet" href="css/etherwallet-master.min.css">
+  <script type="text/javascript" src="js/etherwallet-static.min.js"></script>
+  <script type="text/javascript" src="js/etherwallet-master.js"></script>
+  <meta name="description" content="MyEtherWallet (MEW) is a free, open-source, client-side interface for generating Ethereum wallets &amp; more. Interact with the Ethereum blockchain easily &amp; securely.">
+  <meta property="og:description" content="Free, open-source, client-side Ethereum wallet. Enabling you to interact with the blockchain easily &amp; securely.">
+  <meta name="twitter:description" content="Free, open-source, client-side Ethereum wallet. Enabling you to interact with the blockchain easily &amp; securely.">
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="google-site-verification" content="IpChQ00NYUQuNs_7Xs6xlnSdzalOlTUYbBsr8f7OpvM">
+  <link href="images/fav/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="images/fav/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32">
+  <link href="images/fav/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16">
+  <link href="images/fav/manifest.json" rel="manifest">
+  <link href="images/fav/safari-pinned-tab.svg" rel="mask-icon" color="#2f99b0">
+  <link href="images/fav/favicon.ico" rel="shortcut icon">
+  <meta name="apple-mobile-web-app-title" content="MyEtherWallet · Your Key to Ethereum">
+  <meta name="application-name" content="MyEtherWallet">
+  <meta name="msapplication-config" content="images/fav/browserconfig.xml">
+  <meta name="theme-color" content="#1d6986">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#1d6986">
+  <meta property="og:url" content="https://www.myetherwallet.com">
+  <meta property="og:title" content="MyEtherWallet.com  · Your Key to Ethereum">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/images/myetherwallet-logo-banner.png">
+  <meta property="og:image" content="/images/myetherwallet-logo.png">
+  <meta property="og:image" content="/images/myetherwallet-logo-square.png">
+  <meta property="og:image" content="/images/myetherwallet-banner-fun.jpg">
+  <meta name="twitter:image" content="/images/myetherwallet-logo-twitter.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@MyEtherWallet">
+  <meta name="twitter:creator" content="@MyEtherWallet">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type" : "Organization",
+      "name" : "MyEtherWallet",
+      "legalName" : "MyEtherWallet Inc",
+      "url" : "https://www.myetherwallet.com/",
+      "contactPoint" : [{
+        "@type" : "ContactPoint",
+        "email" : "support@myetherwallet.com",
+        "url"   : "https://myetherwallet.com",
+        "contactType" : "customer service"
+      }],
+      "logo" : "https://www.myetherwallet.com/images/myetherwallet-logo.png",
+      "description": "MyEtherWallet.com is a free, open-source, client-side interface for generating Ethereum wallets &amp; more. Interact with the Ethereum blockchain easily &amp; securely.",
+      "sameAs" : [
+      "https://www.myetherwallet.com/",
+      "https://chrome.google.com/webstore/detail/myetherwallet-cx/nlbmnnijcnlegkjjpcfjclmcfggfefdm",
+      "https://www.facebook.com/MyEtherWallet/",
+      "https://twitter.com/myetherwallet",
+      "https://medium.com/@myetherwallet",
+      "https://myetherwallet.github.io/knowledge-base/",
+      "https://github.com/kvhnuke/etherwallet",
+      "https://github.com/MyEtherWallet",
+      "https://kvhnuke.github.io/etherwallet/","https://myetherwallet.slack.com/"
+      ]
+    }
+  </script>
+</head>
+
+<body>
+  <header class="Ropsten infura.io infura.io nav-index-6 ng-scope" aria-label="header" ng-controller="tabsCtrl">
+    <section class="bg-gradient header-branding">
+      <section class="container">
+        <div class="tagline">
+          <a tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="change language. current language 한국어" class="dropdown-toggle  btn btn-white ng-binding" ng-click="dropdown = !dropdown">한국어<i class="caret"></i></a>
+          <a tabindex="0" aria-haspopup="true" aria-label="adjust gas price" class="dropdown-toggle  btn btn-white ng-binding" ng-click="dropdownGasPrice = !dropdownGasPrice">
+            <span translate="OFFLINE_Step2_Label_3" class="ng-scope">가스 가격</span>:
+            1 Gwei
+            <i class="caret"></i>
+          </a>
+          <!-- Warning: The separators you see on the frontend are in styles/etherwallet-custom.less. If you add / change a node, you have to adjust these. Ping tayvano if you're not a CSS wizard -->
+          <a tabindex="0" aria-haspopup="true" aria-label="change node. current node Ropsten node by infura.io" class="dropdown-toggle  btn btn-white ng-binding" ng-click="dropdownNode = !dropdownNode">
+           <span translate="X_Network" class="ng-scope">Network</span>
+           Ropsten
+           <small class="ng-binding">(infura.io)</small>
+           <i class="caret"></i>
+         </a>
+       </div>
+     </section>
+   </section>
+   <div class="nav-scroll">
+    <ul class="nav-inner">
+      <a tabindex="0" aria-label="nav item: 컨트랙트" translate="NAV_Contracts" class="ng-scope">컨트랙트</a>
+    </ul>
+  </div>
+
+
+  <article class="modal fade" id="customNodeModal" tabindex="-1">
+    <section class="modal-dialog">
+      <section class="modal-content">
+
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close Dialog">×</button>
+
+          <h2 class="modal-title text-info ng-scope" translate="NODE_Title">커스텀 노드 설정하기</h2>
+
+          <p class="small"><a href="https://myetherwallet.github.io/knowledge-base/networks/run-your-own-node-with-myetherwallet.html" target="_blank" rel="noopener noreferrer"> Instructions can be found here </a></p>
+
+          <div ng-show="browserProtocol=='https:'" class="alert alert-danger small ng-scope ng-hide" translate="NODE_Warning">MyEtherWallet.com을 통해 연결하기 위해서는 HTTPS 노드가 필요합니다. 모든 노드에 연결하려면 [MyEtherWallet 저장소를 다운로드하고 로컬로 실행] (<a target="_blank" rel="noopener noreferrer" href="https://github.com/kvhnuke/etherwallet/releases/latest">https://github.com/kvhnuke/etherwallet/releases/latest</a>) 할 수 있습니다. 추가로 무료 SSL 인증서를 <a target="_blank" rel="noopener noreferrer" href="https://letsencrypt.org/">LetsEncrypt</a>에서 받으실 수 있습니다.</div>
+
+        <section class="row">
+          <div class="clearfix col-xs-12">
+            <label translate="NODE_Name" class="ng-scope">노드 명</label>
+            <input class="form-control ng-pristine ng-untouched ng-valid ng-empty is-invalid" type="text" placeholder="My ETH Node" ng-model="customNode.name" ng-class="Validator.isAlphaNumericSpace(customNode.name) ? 'is-valid' : 'is-invalid'">
+          </div>
+
+          <div class="clearfix col-xs-9">
+            <label>URL</label>
+            <input class="form-control ng-pristine ng-untouched ng-valid ng-empty is-invalid" type="text" placeholder="http://127.0.0.1" ng-model="customNode.url" ng-class="checkNodeUrl(customNode.url) ? 'is-valid' : 'is-invalid'">
+          </div>
+
+          <div class="clearfix col-xs-3">
+            <label class="NODE_Port">Port</label>
+            <input class="form-control ng-pristine ng-untouched ng-valid ng-empty is-valid" type="text" placeholder="8545" ng-model="customNode.port" ng-class="Validator.isPositiveNumber(customNode.port) || customNode.port=='' ? 'is-valid' : 'is-invalid'">
+          </div>
+
+          <div class="clearfix col-xs-12">
+            <label><input type="checkbox" ng-model="customNode.httpBasicAuth" ng-true-value="{user:'',password:''}" ng-false-value="null" value="false" class="ng-pristine ng-untouched ng-valid ng-empty"> HTTP Basic access authentication </label>
+          </div>
+
+          <div class="clearfix col-xs-6 ng-hide" ng-show="customNode.httpBasicAuth">
+            <label>User</label>
+            <input class="form-control ng-pristine ng-untouched ng-valid ng-empty is-invalid" type="text" ng-model="customNode.httpBasicAuth.user" ng-class="customNode.httpBasicAuth &amp;&amp; customNode.httpBasicAuth.user.length > 0 ? 'is-valid' : 'is-invalid'">
+          </div>
+
+          <div class="clearfix col-xs-6 ng-hide" ng-show="customNode.httpBasicAuth">
+            <label>Password</label>
+            <input class="form-control ng-pristine ng-untouched ng-valid ng-empty is-invalid" type="password" ng-model="customNode.httpBasicAuth.password" ng-class="customNode.httpBasicAuth &amp;&amp; customNode.httpBasicAuth.password.length > 0 ? 'is-valid' : 'is-invalid'">
+          </div>
+
+          <div class="clearfix col-xs-12 radio">
+            <label><input name="options" type="radio" ng-model="customNode.options" value="eth" class="ng-pristine ng-untouched ng-valid ng-not-empty"> ETH </label>
+            <label><input name="options" type="radio" ng-model="customNode.options" value="etc" class="ng-pristine ng-untouched ng-valid ng-not-empty"> ETC </label>
+            <label><input name="options" type="radio" ng-model="customNode.options" value="rop" class="ng-pristine ng-untouched ng-valid ng-not-empty"> Ropsten </label>
+            <label><input name="options" type="radio" ng-model="customNode.options" value="kov" class="ng-pristine ng-untouched ng-valid ng-not-empty"> Kovan </label>
+            <label><input name="options" type="radio" ng-model="customNode.options" value="rin" class="ng-pristine ng-untouched ng-valid ng-not-empty"> Rinkeby </label>
+            <label><input name="options" type="radio" ng-model="customNode.options" value="cus" class="ng-pristine ng-untouched ng-valid ng-not-empty"> Custom </label>
+            <label><input type="checkbox" ng-model="customNode.eip155" value="true" class="ng-pristine ng-untouched ng-valid ng-empty"> Supports EIP-155 </label>
+          </div>
+
+          <div class="clearfix col-sm-6 col-sm-offset-6 ng-hide" ng-show="customNode.eip155">
+            <label>Chain ID</label>
+            <input class="form-control ng-pristine ng-untouched ng-valid ng-empty is-invalid" type="text" placeholder="" ng-model="customNode.chainId" ng-class="Validator.isPositiveNumber(customNode.chainId) ? 'is-valid' : 'is-invalid'">
+          </div>
+        </section>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-default ng-scope" data-dismiss="modal" translate="x_Cancel">취소</button>
+        <button class="btn btn-primary ng-scope" ng-click="saveCustomNode()" translate="NODE_CTA">커스텀 노드 저장 또는 사용</button>
+      </div>
+    </section>
+  </section>
+</article>
+</header>
+
+<section class="container ng-scope" style="min-height: 50%" ng-controller="viewCtrl">
+  <div class="tab-content">
+    <!-- ngIf: globalService.currentTab==globalService.tabs.contracts.id --><main class="tab-pane contracts active ng-scope" ng-if="globalService.currentTab==globalService.tabs.contracts.id" ng-controller="contractsCtrl">
+      <!-- Title -->
+      <div class="block text-center">
+        <h1>
+          <a translate="NAV_InteractContract" ng-class="{'isActive': visibility=='interactView'}" ng-click="setVisibility('interactView')" class="ng-scope isActive">컨트랙트 조작</a>
+      </h1>
+    </div>
+  <!-- / Title -->
+
+  <!-- Interact Contracts -->
+  <article class="row block">
+
+
+    <!-- Address -->
+    <section class="col-sm-6 clearfix">
+      <div class="row">
+        <address-field labeltranslated="CONTRACT_Title" var-name="contract.address">
+              <div class="col-xs-11 ng-scope">
+                <label translate="CONTRACT_Title" class="ng-scope">컨트랙트 주소</label>
+                <input class="form-control ng-pristine ng-untouched ng-valid ng-empty is-invalid" type="text" ng-model="addressDrtv.ensAddressField" ng-disabled="addressDrtv.readOnly" ng-class="Validator.isValidENSorEtherAddress(contract.address) ? 'is-valid' : 'is-invalid'">
+                <p class="ens-response ng-hide" ng-show="addressDrtv.showDerivedAddress">
+                  <span class="mono ng-binding"> ↳  </span>
+                </p>
+                <p class="flagged-address ng-hide" ng-show="phishing.error">
+                  <span class="mono ng-binding">  </span>
+                </p>
+              </div>
+            </address-field>
+      </div>
+    </section>
+    <!-- ABI Textarea -->
+    <section class="col-xs-12 clearfix">
+      <label translate="CONTRACT_Json" class="ng-scope">ABI / JSON 인터페이스</label>
+      <textarea class="form-control ng-pristine ng-untouched ng-valid ng-empty is-invalid" rows="6" placeholder="[{ &quot;type&quot;:&quot;contructor&quot;, &quot;inputs&quot;: [{ &quot;name&quot;:&quot;param1&quot;, &quot;type&quot;:&quot;uint256&quot;, &quot;indexed&quot;:true }], &quot;name&quot;:&quot;Event&quot; }, { &quot;type&quot;:&quot;function&quot;, &quot;inputs&quot;: [{&quot;name&quot;:&quot;a&quot;, &quot;type&quot;:&quot;uint256&quot;}], &quot;name&quot;:&quot;foo&quot;, &quot;outputs&quot;: [] }] " ng-class="Validator.isJSON(contract.abi) ? 'is-valid' : 'is-invalid'" ng-model="contract.abi"></textarea>
+    </section>
+
+    <!-- Button -->
+    <section class="col-xs-12 clearfix">
+      <button class="btn btn-primary ng-scope" ng-click="initContract()" translate="x_Access">액세스</button>
+    </section>
+
+
+
+  </article>
+
+  <article class="row block">
+
+   <!-- STEP READ/WRITE -->
+   <section class="col-xs-12 clearfix">
+
+    <!-- Contract Info CONTRACT_Interact_CTA -->
+    <span class="form-group">
+      <h4 translate="CONTRACT_Interact_Title" class="ng-scope">컨트랙트 읽기/쓰기</h4>
+      <h5 class="ng-binding">  </h5>
+
+      <div class="form-group well ng-hide" ng-show="contract.address=='0x0101010101010101010101010101010101010101' || contract.address=='0x1010101010101010101010101010101010101010'">
+      <p class="CONTRACT_Helper_1">
+        Please change the address to your own Multisig Contract Address.
+      </p>
+    </div>
+
+    <div class="form-group well ng-hide" ng-show="contract.address=='0xd0a6E6C54DbC68Db5db3A091B171A77407Ff7ccf'">
+      <ol>
+        <li translate="EOS_01" class="ng-scope"><strong>Generate EOS Key-pair</strong></li>
+        <li>
+          <span translate="EOS_02" class="ng-scope"><strong>Register / Map your EOS Key</strong></span>
+          <ul>
+            <li translate="EOS_03" class="ng-scope">Select <code>register</code></li>
+            <li translate="EOS_04" class="ng-scope">Enter your <strong>EOS Public Key</strong> &lt;--- CAREFUL! EOS PUBLIC KEY!</li>
+            <li>
+            Unlock wallet</li>
+            <li>
+              <span translate="SEND_amount" class="ng-scope">보낼 수량</span> :
+              <code>0</code>
+              ·
+              <span translate="TRANS_gas" class="ng-scope">가스 한도</span>:
+              at least <code>90000</code>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span translate="EOS_05" class="ng-scope">Fund EOS Contract on Send Page</span>
+          <ul>
+            <li translate="EOS_06" class="ng-scope">Go to Send Ether &amp; Tokens Page</li>
+            <li translate="EOS_07" class="ng-scope">Unlock same wallet you are unlocking here.</li>
+            <li translate="EOS_08" class="ng-scope">Send Amount you want to Contribute to <code>0xd0a6E6C54DbC68Db5db3A091B171A77407Ff7ccf</code></li>
+            <li>
+              <span translate="TRANS_gas" class="ng-scope">가스 한도</span>:
+              at least <code>90000</code>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span translate="EOS_09" class="ng-scope">Claim EOS Tokens</span>
+          <ul>
+            <li translate="EOS_10" class="ng-scope">Select <code>claimAll</code>.</li>
+            <li translate="ADD_Label_6" class="ng-scope">지갑 잠금 해제</li>
+            <li>
+              <span translate="SEND_amount" class="ng-scope">보낼 수량</span>:
+              <code>0</code> ·
+              <span translate="TRANS_gas" class="ng-scope">가스 한도</span>:
+              at least <code>90000</code>
+            </li>
+          </ul>
+        </li>
+      </ol></div>
+
+      <div class="btn-group">
+        <a class="btn btn-default ng-binding" ng-click="dropdownContracts = !dropdownContracts">
+          Select a function
+          <i class="caret"></i>
+        </a>
+        <ul class="dropdown-menu ng-hide" ng-show="dropdownContracts">
+          <!-- ngRepeat: func in contract.functions track by $index -->
+        </ul>
+      </div>
+    </span>
+
+    <!-- Write -->
+    <span class="form-group">
+      <!-- ngRepeat: input in contract.functions[contract.selectedFunc.index].inputs track by $index -->
+  </span>
+  <!-- / Write -->
+
+
+  <!-- Output -->
+  <span class="form-group output">
+    <!-- ngRepeat: output in contract.functions[contract.selectedFunc.index].outputs track by $index -->
+  </span>
+  <!-- / Output -->
+
+
+</section>
+
+
+
+</article>
+
+<article>
+
+ <article class="modal fade" id="sendContract" tabindex="-1">
+  <section class="modal-dialog">
+    <section class="modal-content">
+
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close Dialog">×</button>
+
+        <div ng-show="wd" class="ng-hide">
+
+          <h2 class="modal-title text-danger ng-scope" translate="SENDModal_Title">경고!</h2>
+
+          <p translate="CONTRACT_Warning_3" class="ng-scope">You are about to <strong>execute a function on contract</strong>.</p>
+          <p class="ng-binding">
+            <span translate="CONTRACT_Warning_2" class="ng-scope">It will be deployed on the following network:</span>
+            <strong class="ng-binding">ROPSTEN ETH</strong> (infura.io).
+          </p>
+
+
+          <label>
+            <span translate="SEND_amount" class="ng-scope">보낼 수량</span>
+            <em translate="SEND_Helper_Contract" class="ng-scope">In most cases you should leave this as 0.</em>
+          </label>
+          <input class="form-control ng-pristine ng-untouched ng-valid ng-not-empty is-valid" type="text" placeholder="0" ng-model="tx.value" ng-class="Validator.isPositiveNumber(tx.value) ? 'is-valid' : 'is-invalid'">
+
+          <label translate="TRANS_gas" class="ng-scope">가스 한도</label>
+          <input class="form-control ng-pristine ng-untouched ng-valid ng-empty is-invalid" type="text" placeholder="300000" ng-model="tx.gasLimit" ng-class="Validator.isPositiveNumber(tx.gasLimit) ? 'is-valid' : 'is-invalid'">
+
+          <a class="btn btn-info btn-block ng-scope" ng-click="generateTx()" translate="SEND_generate">트랜잭션 생성</a>
+
+          <!-- Data -->
+          <section class="row ng-hide" ng-show="showRaw">
+            <!-- Raw TX -->
+            <div class="form-group col-sm-6">
+              <h4 translate="SEND_raw" class="ng-scope">초기 트랜잭션</h4>
+              <textarea class="form-control ng-binding" rows="3" readonly=""></textarea>
+            </div>
+            <!-- Singed TX -->
+            <div class="form-group col-sm-6">
+              <h4 translate="SEND_signed" class="ng-scope">서명된 트랜잭션</h4>
+              <textarea class="form-control ng-binding" rows="3" readonly=""></textarea>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+
+      <div class="modal-footer ng-hide" ng-show="showRaw">
+        <button class="btn btn-default ng-scope" data-dismiss="modal" translate="SENDModal_No">아니요, 전송을 취소합니다.</button>
+        <button class="btn btn-primary ng-scope" ng-click="sendTx()" translate="SENDModal_Yes">네, 맞습니다! 전송합니다.</button>
+      </div>
+
+    </section>
+  </section>
+</article>
+
+
+
+
+</article>
+<!-- / Interact Contracts -->
+
+
+
+<!-- Deploy Contract -->
+<article class="row block ng-hide" ng-show="visibility=='deployView'">
+
+ <section class="col-xs-12">
+
+  <!-- Byte Code -->
+  <div class="form-group">
+    <h4 translate="CONTRACT_ByteCode" class="ng-scope">Byte 코드</h4>
+    <textarea class="form-control ng-pristine ng-untouched ng-valid ng-empty is-invalid" rows="8" ng-model="tx.data" ng-class="Validator.isValidHex(tx.data)&amp;&amp;tx.data!='' ? 'is-valid' : 'is-invalid'"></textarea>
+  </div>
+
+  <!-- Gas -->
+  <div class="form-group">
+    <h4 translate="TRANS_gas" class="ng-scope">가스 한도</h4>
+    <input class="form-control ng-pristine ng-untouched ng-valid ng-empty is-invalid" type="text" placeholder="300000" ng-model="tx.gasLimit" ng-class="Validator.isPositiveNumber(tx.gasLimit) ? 'is-valid' : 'is-invalid'">
+  </div>
+
+  <!-- Sign TX Button (once wallet has been unlocked) -->
+  <div class="form-group">
+    <a class="btn btn-info btn-block ng-scope ng-hide" ng-click="generateTx()" ng-show="wd" translate="DEP_signtx">서명 트랜잭션</a>
+  </div>
+
+  <!-- TXs -->
+  <section class="row ng-hide" ng-show="showRaw">
+    <!-- Raw TX -->
+    <div class="form-group col-sm-6">
+      <h4 translate="SEND_raw" class="ng-scope">초기 트랜잭션</h4>
+      <textarea class="form-control ng-binding" rows="4" readonly=""></textarea>
+    </div>
+    <!-- Singed TX -->
+    <div class="form-group col-sm-6">
+      <h4 translate="SEND_signed" class="ng-scope">서명된 트랜잭션</h4>
+      <textarea class="form-control ng-binding" rows="4" readonly=""></textarea>
+    </div>
+  </section>
+
+  <!-- Deploy Contract Button (once tx has been signed) -->
+  <div class="form-group ng-hide" ng-show="showRaw">
+    <a class="btn btn-primary btn-block ng-scope" data-toggle="modal" data-target="#deployContract" translate="NAV_DeployContract">컨트랙트 배포</a>
+</div>
+
+<article class="modal fade" id="deployContract" tabindex="-1">
+  <section class="modal-dialog">
+    <section class="modal-content">
+
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close Deploy Contract Dialog">×</button>
+
+        <h2 class="modal-title text-danger ng-scope" translate="SENDModal_Title">경고!</h2>
+
+        <p translate="CONTRACT_Warning_1" class="ng-scope">You are about to <strong>deploy a contract</strong>.</p>
+        <p>
+          <span translate="CONTRACT_Warning_2" class="ng-scope">It will be deployed on the following network:</span>
+          <strong class="ng-binding">ROPSTEN ETH</strong>.
+        </p>
+
+        <p> The <strong class="ng-binding">ROPSTEN ETH</strong> node you are sending through is provided by <strong class="ng-binding">infura.io</strong>.</p>
+
+        <h4 translate="SENDModal_Content_3" class="ng-scope">정말 전송 하시겠습니까?</h4>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-default ng-scope" data-dismiss="modal" aria-label="Close Deploy Contract Dialog" translate="SENDModal_No">아니요, 전송을 취소합니다.</button>
+        <button class="btn btn-primary ng-scope" ng-click="sendTx()" translate="SENDModal_Yes">네, 맞습니다! 전송합니다.</button>
+      </div>
+
+    </section>
+  </section>
+</article>
+</section>
+</article>
+<!-- / Deploy Contract -->
+
+<!--wallet decrypt-->
+<article class="form-group">
+
+  <wallet-decrypt-drtv><article class="block decrypt-drtv clearfix ng-scope" ng-controller="decryptWalletCtrl as $crtl">
+
+  <!-- Column 1 - Select Type of Key -->
+  <section class="col-md-4 col-sm-6">
+
+    <h4 translate="decrypt_Access" class="ng-scope">지갑 액세스 방법 선택</h4>
+
+    <!-- View Balance Only -->
+ <!-- Keystore / JSON File -->
+    <label aria-flowto="aria6" class="radio">
+      <input aria-flowto="aria6" aria-label="Keystore JSON file" type="radio" checked="checked" ng-model="walletType" value="fileupload" class="ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched" name="60">
+      Keystore / JSON File
+
+
+    </label>
+
+<!-- Column 2 - Unlock That Key -->
+  <section class="col-md-8 col-sm-6">
+
+    <!-- Keystore -->
+    <!-- ngIf: walletType=='fileupload' --><div ng-if="walletType=='fileupload'" class="ng-scope">
+      <h4 translate="ADD_Radio_2_alt" class="ng-scope">지갑 파일 선택하기</h4>
+      <h5>
+
+
+      <div class="form-group">
+        <input style="display:none;" type="file" on-read-file="showContent($fileContent)" id="fselector">
+        <a class="btn-file marg-v-sm ng-scope" ng-click="openFileDialog()" translate="ADD_Radio_2_short" id="aria1" tabindex="0" role="button">지갑 파일 선택하기...</a>
+      </div>
+      <!-- ngIf: requireFPass --><div class="form-group ng-scope" ng-if="requireFPass">
+        <p translate="ADD_Label_3" class="ng-scope">당신의 지갑은 암호화되었습니다. 비밀번호를 입력해주세요.</p>
+        <input class="form-control ng-pristine ng-valid ng-empty is-invalid ng-touched" ng-change="onFilePassChange()" ng-class="Validator.isPasswordLenValid($parent.$parent.filePassword,0) ? 'is-valid' : 'is-invalid'" ng-model="$parent.$parent.filePassword" placeholder="비밀번호
+" type="password">
+      </div><!-- end ngIf: requireFPass -->
+      <div class="form-group">
+        <a tabindex="0" role="button" class="btn btn-primary ng-scope ng-hide" ng-show="showFDecrypt||showPDecrypt||showMDecrypt||showParityDecrypt" ng-click="decryptWallet()" translate="ADD_Label_6_short">잠금 해제</a>
+      </div>
+    </h5></div><!-- end ngIf: walletType=='fileupload' -->
+    <!-- / Keystore -->
+
+
+    <!--  Mnemonic -->
+    <!-- ngIf: walletType=='pastemnemonic' -->
+    <!-- / Mnemonic -->
+
+
+    <!--  Private Key -->
+    <!-- ngIf: walletType=='pasteprivkey' -->
+    <!-- / Private Key -->
+
+
+    <!-- Parity Phrase -->
+    <!-- ngIf: walletType=='parityBWallet' -->
+    <!-- / Parity Phrase -->
+
+  </section>
+  <!-- / Column 2 - Unlock That Key -->
+
+
+  <!-- MODAL -->
+  <article class="modal fade" id="mnemonicModel" tabindex="-1" role="dialog" aria-labelledby="Mnemonic Phrase Modal">
+
+    <section class="modal-dialog">
+
+      <section class="modal-content">
+
+        <div class="modal-body" role="document">
+
+          <button aria-label="Close" type="button" class="close" data-dismiss="modal">×</button>
+
+          <!-- Select HD Path -->
+          <h4 id="modalTitle" class="modal-title ng-scope" translate="ADD_Radio_5_Path" style="margin-bottom: .25rem">HD derivation 경로 선택</h4>
+
+          <p class="alert alert-danger ng-hide" ng-hide="ajaxReq.type=='ETH'||ajaxReq.type=='ETC'||ajaxReq.type=='ROPSTEN ETH'||ajaxReq.type=='RINKEBY ETH'||ajaxReq.type=='KOVAN ETH'||ajaxReq.type=='EXP'||ajaxReq.type=='UBQ'||ajaxReq.type=='ELLA'">
+                We do not know the correct path for this network.
+                <a href="https://github.com/kvhnuke/etherwallet/issues" target="_blank" rel="noopener noreferrer">
+                      Please open a github issue
+                </a>
+                so we can discuss / be enlightened.
+          </p>
+
+          <section class="row">
+
+            <div class="col-sm-4">
+              <label class="radio small">
+                <input aria-describedby="Path: Jaxx, Metamask, Exodus, imToken - m/44'/60'/0'/0" ng-change="onHDDPathChange()" ng-model="HDWallet.dPath" type="radio" value="m/44'/60'/0'/0" class="ng-pristine ng-untouched ng-valid ng-not-empty" name="62">
+                <span ng-bind="HDWallet.defaultDPath" class="ng-binding">m/44'/60'/0'/0</span>
+                <p class="small">
+                  Jaxx, Metamask, Exodus, imToken, TREZOR (ETH) &amp; Digital Bitbox
+                </p>
+              </label>
+            </div>
+
+            <div class="col-sm-4">
+              <label class="radio small">
+                <input aria-describedby="Path: Ledger (ETH) m/44'/60'/0'" ng-change="onHDDPathChange()" ng-model="HDWallet.dPath" type="radio" value="m/44'/60'/0'" class="ng-pristine ng-untouched ng-valid ng-not-empty" name="63">
+                <span ng-bind="HDWallet.ledgerPath" class="ng-binding">m/44'/60'/0'</span>
+                <p class="small">
+                  Ledger (ETH)
+                </p>
+              </label>
+
+              <label class="radio small">
+                <input aria-describedby="Path: Ledger (ETC) m/44'/60'/160720'/0'" ng-change="onHDDPathChange()" ng-model="HDWallet.dPath" type="radio" value="m/44'/60'/160720'/0'" class="ng-pristine ng-untouched ng-valid ng-not-empty" name="64">
+                <span ng-bind="HDWallet.ledgerClassicPath" class="ng-binding">m/44'/60'/160720'/0'</span>
+                <p class="small">
+                  Ledger (ETC)
+                </p>
+              </label>
+            </div>
+
+            <div class="col-sm-4">
+              <label class="radio small">
+                <input aria-describedby="Path: TREZOR (ETC) m/44'/61'/0'/0" ng-change="onHDDPathChange()" ng-model="HDWallet.dPath" type="radio" value="m/44'/61'/0'/0" class="ng-pristine ng-untouched ng-valid ng-not-empty" name="65">
+                <span ng-bind="HDWallet.trezorClassicPath" class="ng-binding">m/44'/61'/0'/0</span>
+                <p class="small">
+                  TREZOR (ETC)
+                </p>
+              </label>
+            </div>
+
+            <div class="col-sm-4">
+              <label class="radio small">
+                <input aria-describedby="Path: SingularDTV m/0'/0'/0'" ng-change="onHDDPathChange()" ng-model="HDWallet.dPath" type="radio" value="m/0'/0'/0'" class="ng-pristine ng-untouched ng-valid ng-not-empty" name="66">
+                <span ng-bind="HDWallet.singularDTVPath" class="ng-binding">m/0'/0'/0'</span>
+                <p class="small">
+                  SingularDTV
+                </p>
+              </label>
+            </div>
+
+          </section>
+
+          <section class="row">
+            <div class="col-sm-4">
+              <label class="radio small">
+                <input aria-describedby="Path: TREZOR - TESTNET - m/44'/1'/0'/0" ng-change="onHDDPathChange()" ng-model="HDWallet.dPath" type="radio" value="m/44'/1'/0'/0" class="ng-pristine ng-untouched ng-valid ng-not-empty" name="67">
+                <span ng-bind="HDWallet.trezorTestnetPath" class="ng-binding">m/44'/1'/0'/0</span>
+                <p class="small">
+                  Network: Testnets
+                </p>
+              </label>
+            </div>
+
+            <div class="col-sm-4">
+              <label class="radio small">
+                <input aria-describedby="Path: TREZOR (ETC) m/44'/40'/0'/0" ng-change="onHDDPathChange()" ng-model="HDWallet.dPath" type="radio" value="m/44'/40'/0'/0" class="ng-pristine ng-untouched ng-valid ng-not-empty" name="68">
+                <span ng-bind="HDWallet.hwExpansePath" class="ng-binding">m/44'/40'/0'/0</span>
+                <p class="small">
+                  Network: Expanse
+                </p>
+              </label>
+            </div>
+
+            <div class="col-sm-4">
+              <label class="radio small">
+                <input aria-describedby="Path: TREZOR (ETC) m/44'/108'/0'/0" ng-change="onHDDPathChange()" ng-model="HDWallet.dPath" type="radio" value="m/44'/108'/0'/0" class="ng-pristine ng-untouched ng-valid ng-not-empty" name="69">
+                <span ng-bind="HDWallet.hwUbqPath" class="ng-binding">m/44'/108'/0'/0</span>
+                <p class="small">
+                  Network: Ubiq
+                </p>
+              </label>
+            </div>
+
+            <div class="col-sm-4">
+              <label class="radio small">
+                <input aria-describedby="Path: TREZOR (ELLA) m/44'/163'/0'/0" ng-change="onHDDPathChange()" ng-model="HDWallet.dPath" type="radio" value="m/44'/163'/0'/0" class="ng-pristine ng-untouched ng-valid ng-not-empty" name="70">
+                <span ng-bind="HDWallet.hwEllaismPath" class="ng-binding">m/44'/163'/0'/0</span>
+                <p class="small">
+                  Network: Ellaism
+                </p>
+              </label>
+            </div>
+          </section>
+
+          <section class="row">
+            <div class="col-sm-4">
+              <label class="radio small">
+                <p class="small"><strong>
+                  Your Custom Path
+                </strong></p>
+                <input aria-describedby="Path: Enter your own - m/44'/60'/1'/0" ng-change="onHDDPathChange()" ng-model="HDWallet.dPath" type="radio" value="m/44'/60'/1'/0" class="ng-pristine ng-untouched ng-valid ng-not-empty" name="71">
+                <input aria-describedby="Path: Enter your own - m/44'/60'/1'/0" type="text" class="form-control input-sm ng-pristine ng-untouched ng-valid ng-not-empty" ng-model="HDWallet.customDPath" ng-change="onCustomHDDPathChange()" style="float: right;margin: 0 0 .5rem;">
+              </label>
+            </div>
+          </section>
+
+
+
+          <h4 id="modalTitle2" class="modal-title ng-scope" translate="MNEM_1" style="margin: .5rem 0">액세스하고자 하는 주소를 선택해주세요.</h4>
+
+          <table class="small table table-striped table-mnemonic">
+            <tbody><tr>
+              <th translate="x_Address" class="ng-scope">내 주소</th>
+              <th translate="MYWAL_Bal" class="ng-scope">잔액</th>
+              <th translate="sidebar_TokenBal" class="text-center ng-scope">토큰 잔액</th>
+            </tr>
+            <!-- ngRepeat: wallet in HDWallet.wallets track by $index -->
+
+            <tr class="m-addresses">
+
+              <td>
+                <a ng-click="AddRemoveHDAddresses(false)" ng-show="HDWallet.numWallets > 5" role="link" tabindex="0" translate="MNEM_prev" class="ng-scope ng-hide">이전 주소</a>
+              </td>
+
+              <td></td>
+
+              <td>
+                <a ng-click="AddRemoveHDAddresses(true)" role="link" tabindex="0" translate="MNEM_more" class="ng-scope">나머지 주소</a>
+              </td>
+
+            </tr>
+          </tbody></table>
+
+          <div class="clearfix button-group">
+            <button aria-label="Unlock this Wallet" class="btn btn-primary pull-right ng-scope" style="margin: 0 .1rem" ng-click="setHDWallet()" role="button" tabindex="0" translate="ADD_Label_6">지갑 잠금 해제</button>
+
+            <button aria-label="Cancel - Will close dialog" class="btn btn-default pull-right ng-scope" style="margin: 0 .1rem" data-dismiss="modal" role="button" tabindex="0" translate="x_Cancel">취소</button>
+          </div>
+
+        </div>
+
+      </section>
+
+    </section>
+
+  </article>
+
+</section></article>
+</wallet-decrypt-drtv>
+</article>
+
+<article class="col-xs-12">
+
+  <button class="btn btn-primary btn-block ng-hide" ng-click="readFromContract()" ng-show="contract.functions[contract.selectedFunc.index].constant &amp;&amp; showRead">
+  <span translate="CONTRACT_Read" class="ng-scope">읽기</span>
+</button>
+
+<button class="btn btn-primary btn-block" ng-click="generateContractTx()">
+<span translate="CONTRACT_Write" class="ng-scope">쓰기</span>
+</button>
+
+<br>
+</article>
+
+</main><!-- end ngIf: globalService.currentTab==globalService.tabs.contracts.id -->
+
+<!-- print -->
+<div class="tab-pane" id="panePrint" style="display: none;">
+  <div class="print-container">
+    <span id="printwalletjson" style="display: none;"></span>
+    <img src="images/logo-ethereum-1.png" class="ether-logo-1" height="100%" width="auto">
+    <img src="images/logo-ethereum-2.png" class="ether-logo-2">
+    <img src="images/print-sidebar.png" height="100%" width="auto" class="print-title">
+    <div class="print-qr-code-1">
+      <div id="paperwalletaddqr"></div>
+      <!--<img src="images/qrcode_test.png" width="90%;" height="auto" class="pull-left" />-->
+      <p class="print-text" style="padding-top: 25px;">YOUR ADDRESS</p>
+    </div>
+    <div class="print-notes">
+      <img src="images/notes-bg.png" width="90%;" height="auto" class="pull-left">
+      <p class="print-text">AMOUNT / NOTES</p>
+    </div>
+    <div class="print-qr-code-2">
+      <div id="paperwalletprivqr"></div>
+      <p class="print-text" style="padding-top: 30px;">YOUR PRIVATE KEY</p>
+    </div>
+    <div class="print-address-container">
+      <p>
+        <strong>Your Address:</strong>
+        <br>
+        <span id="paperwalletadd"></span>
+      </p>
+      <p>
+        <strong>Your Private Key:</strong>
+        <br>
+        <span id="paperwalletpriv"></span>
+      </p>
+    </div>
+  </div>
+</div>
+<!-- /print <--><!------>
+</div>
+<!-- ngRepeat: alert in notifier.alerts -->
+</section>
+</body></html>

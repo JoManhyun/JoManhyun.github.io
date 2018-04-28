@@ -95,8 +95,7 @@
    </section>
    <div class="nav-scroll">
     <ul class="nav-inner">
-      <a tabindex="0" aria-label="nav item: 컨트랙트
-      " translate="NAV_Contracts" class="ng-scope">컨트랙트</a>
+      <a tabindex="0" aria-label="nav item: 컨트랙트" translate="NAV_Contracts" class="ng-scope">컨트랙트</a>
     </ul>
   </div>
 
@@ -193,12 +192,12 @@
           ng-click="setVisibility('interactView')">
           Interact with Contract
         </a>
-    </h1>
-  </div>
+      </h1>
+    </div>
   <!-- / Title -->
 
   <!-- Interact Contracts -->
-  <article class="row block" ng-show="visibility=='interactView'">
+  <article class="row block">
 
 
     <!-- Address -->
@@ -228,7 +227,7 @@
 
   </article>
 
-  <article class="row block" ng-show="visibility=='interactView' && showReadWrite">
+  <article class="row block">
 
    <!-- STEP READ/WRITE -->
    <section class="col-xs-12 clearfix">
@@ -331,7 +330,7 @@
     </span>
 
     <!-- Write -->
-    <span class="form-group" ng-show="contract.selectedFunc!=null">
+    <span class="form-group">
       <div ng-repeat="input in contract.functions[contract.selectedFunc.index].inputs track by $index">
         <div ng-switch on="input.type">
 
@@ -420,7 +419,7 @@
 
 
   <!-- Output -->
-  <span class="form-group output" ng-show="contract.functions[contract.selectedFunc.index].constant">
+  <span class="form-group output">
     <div ng-repeat="output in contract.functions[contract.selectedFunc.index].outputs track by $index" class="form-group">
       <div ng-switch on="output.type">
 
@@ -490,7 +489,7 @@
 
 </article>
 
-<article ng-show="visibility=='interactView'">
+<article>
 
  <article class="modal fade" id="sendContract" tabindex="-1">
   <section class="modal-dialog">
@@ -691,14 +690,13 @@
 <!-- / Deploy Contract -->
 
 <!--wallet decrypt-->
-<article class="form-group"
-ng-show="(!wd && visibility=='deployView') || (!wd && visibility=='interactView' && contract.selectedFunc && !contract.functions[contract.selectedFunc.index].constant)">
+<article class="form-group">
 
-<wallet-decrypt-drtv>
-</wallet-decrypt-drtv>
+  <wallet-decrypt-drtv>
+  </wallet-decrypt-drtv>
 </article>
 
-<article class="col-xs-12" ng-show="contract.selectedFunc!=null && visibility=='interactView'">
+<article class="col-xs-12">
 
   <button class="btn btn-primary btn-block"
   ng-click="readFromContract()"
@@ -706,9 +704,7 @@ ng-show="(!wd && visibility=='deployView') || (!wd && visibility=='interactView'
   <span translate="CONTRACT_Read"> READ </span>
 </button>
 
-<button class="btn btn-primary btn-block"
-ng-click="generateContractTx()"
-ng-show="!contract.functions[contract.selectedFunc.index].constant">
+<button class="btn btn-primary btn-block" ng-click="generateContractTx()">
 <span translate="CONTRACT_Write"> WRITE </span>
 </button>
 
