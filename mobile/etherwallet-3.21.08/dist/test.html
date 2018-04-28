@@ -702,7 +702,8 @@
 <article class="form-group"
 ng-show="(!wd && visibility=='deployView') || (!wd && visibility=='interactView' && contract.selectedFunc && !contract.functions[contract.selectedFunc.index].constant)">
 
-<wallet-decrypt-drtv></wallet-decrypt-drtv>
+<wallet-decrypt-drtv>
+</wallet-decrypt-drtv>
 </article>
 
 <article class="col-xs-12" ng-show="contract.selectedFunc!=null && visibility=='interactView'">
@@ -758,7 +759,7 @@ ng-show="!contract.functions[contract.selectedFunc.index].constant">
     </div>
   </div>
 </div>
-<!-- /print -->
+<!-- /print <--></-->
 </div>
 <div data-ng-repeat="alert in notifier.alerts">
   <div class="alert popup alert-{{alert.type}} animated-show-hide"
