@@ -77,37 +77,29 @@
     <section class="bg-gradient header-branding">
       <section class="container">
         <div class="tagline">
-          <span class="dropdown dropdown-lang" ng-cloak>
-            <a tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="change language. current language 한국어" class="dropdown-toggle  btn btn-white ng-binding" ng-click="dropdown = !dropdown">한국어<i class="caret"></i></a>
-          </span>
-          <span class="dropdown dropdown-gas" ng-cloak>
-            <a tabindex="0" aria-haspopup="true" aria-label="adjust gas price" class="dropdown-toggle  btn btn-white ng-binding" ng-click="dropdownGasPrice = !dropdownGasPrice">
-              <span translate="OFFLINE_Step2_Label_3" class="ng-scope">가스 가격</span>:
-              1 Gwei
-              <i class="caret"></i>
-            </a>
-          </span>
+          <a tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="change language. current language 한국어" class="dropdown-toggle  btn btn-white ng-binding" ng-click="dropdown = !dropdown">한국어<i class="caret"></i></a>
+          <a tabindex="0" aria-haspopup="true" aria-label="adjust gas price" class="dropdown-toggle  btn btn-white ng-binding" ng-click="dropdownGasPrice = !dropdownGasPrice">
+            <span translate="OFFLINE_Step2_Label_3" class="ng-scope">가스 가격</span>:
+            1 Gwei
+            <i class="caret"></i>
+          </a>
           <!-- Warning: The separators you see on the frontend are in styles/etherwallet-custom.less. If you add / change a node, you have to adjust these. Ping tayvano if you're not a CSS wizard -->
-          <span class="dropdown dropdown-node" ng-cloak>
-            <a tabindex="0" aria-haspopup="true" aria-label="change node. current node Ropsten node by infura.io" class="dropdown-toggle  btn btn-white ng-binding" ng-click="dropdownNode = !dropdownNode">
-             <span translate="X_Network" class="ng-scope">Network</span>
-             Ropsten
-             <small class="ng-binding">(infura.io)</small>
-             <i class="caret"></i>
-           </a>
-         </span>
+          <a tabindex="0" aria-haspopup="true" aria-label="change node. current node Ropsten node by infura.io" class="dropdown-toggle  btn btn-white ng-binding" ng-click="dropdownNode = !dropdownNode">
+           <span translate="X_Network" class="ng-scope">Network</span>
+           Ropsten
+           <small class="ng-binding">(infura.io)</small>
+           <i class="caret"></i>
+         </a>
        </div>
      </section>
    </section>
+   <div class="nav-scroll">
+    <ul class="nav-inner">
+      <a tabindex="0" aria-label="nav item: 컨트랙트
+      " translate="NAV_Contracts" class="ng-scope">컨트랙트</a>
+    </ul>
+  </div>
 
-   <nav role="navigation" aria-label="main navigation" class="container nav-container overflowing">
-    <div class="nav-scroll">
-      <ul class="nav-inner">
-        <a tabindex="0" aria-label="nav item: 컨트랙트
-        " translate="NAV_Contracts" class="ng-scope">컨트랙트</a>
-      </ul>
-    </div>
-  </nav>
 
   <article class="modal fade" id="customNodeModal" tabindex="-1">
     <section class="modal-dialog">
