@@ -4,7 +4,8 @@ body {
     font:14px/1.8 "함초롬돋움", Helvetica, sans-serif;
 }
 .frame {
-    width: 1000px;
+    width: 1500px;
+    height: 1500px;
     margin: 0 auto;
     border: 1px solid #aaa;
 }
@@ -28,6 +29,7 @@ body {
 .nav {
     float: left;
     width: 150px;
+    height: 1500px;
     background: #333;
     color: #fff;
     margin-right: 50px;
@@ -59,12 +61,13 @@ body {
 }
 .content {
     float: right;
-    width: 850px;
+    width: 1000px;
+    height: 1500px;
     margin-bottom: 20px;
 }
 #upload {
-    display: none;
-    width: 820px;
+    width: 1000px;
+    height: 1500px;
 }
 .footer {
     text-align: center;

@@ -15,7 +15,7 @@
 			<div class="nav">
 				<ul class="navList">
 					<li class="navContent">
-						<a href="" class="navLink" target="_self" onclick="displayChange('upload')">문서등록</a>
+						<a href="" class="navLink" target="_self" onclick="change_display()">문서등록</a>
 					</li>
 					<li class="navContent">
 						<a href="search.html" class="navLink">문서검증</a>
@@ -36,20 +36,17 @@
 					</li>
 				</ul>
 			</div>
-			<div class="content">
-				<iframe src="./upload.html" seamless id="upload">문서등록 페이지입니다.</iframe>
-			</div>
-			<div class="footer">
+			<div class="content" id="id_cont" style="height: 500px; visibility: hidden;">
+				<iframe src="upload.html" id="upload"></iframe>
 			</div>
 		</div>
 		<script>
-			function displayChange(id) {
-				var name = document.getElementById(id);
-				if(name.style.display == "none") {
-					name.style.display = "block";
+			function change_display() {
+				if(id_cont.style.visibility == "hidden"){
+					id_cont.style.visibility = "visible";
 				}
-				else {
-					name.style.display = "none";
+				else if(id_cont.style.visibility == "visible"){
+					id_cont.style.visibility = "hidden";
 				}
 			}
 		</script>
