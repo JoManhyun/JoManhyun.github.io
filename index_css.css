@@ -1,4 +1,4 @@
-@CHARSSET "UTF-8";
+@CHARSET "UTF-8";
 
 body {
     font:14px/1.8 "함초롬돋움", Helvetica, sans-serif;
@@ -59,7 +59,7 @@ body {
 }
 .content {
     float: right;
-    width: 850px;
+    width: 800px;
     margin-bottom: 20px;
 }
 #upload {
