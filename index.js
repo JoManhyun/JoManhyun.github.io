@@ -6,7 +6,7 @@ var abi = [{"constant":true,"inputs":[{"name":"a","type":"uint256"}],"name":"get
 
 (function() {
     Web3 = require('web3');
-    web3 = new Web3(new Web3.providers.HttpProvider("http://192.168.56.1:8545"));
+    web3 = new Web3(new Web3.providers.HttpProvider("http://203.246.30.218:8545"));
     web3.eth.defaultAccount = w_a_addr;
     web3.eth.coinbase = w_a_addr;
 })();
